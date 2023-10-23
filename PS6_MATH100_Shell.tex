@@ -1,0 +1,251 @@
+\documentclass[11pt]{article}
+%------------------------
+%Packages
+\usepackage[top=0.75in, bottom=1.25in, left=1in, right=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb} %this is THE math package
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancybox}
+\usepackage{hyperref}
+\usepackage{varwidth}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+%------------------------
+%Fonts I use, uncomment if you like to use them.
+%The first is the general font, and the second a math font
+\usepackage{mathpazo}
+%\usepackage{eulervm}
+%------------------------
+%This is so that we have standard fonts for the doublestroked symbols
+%for reals, naturals etc. regardless of what font you use.
+%Don't comment
+\AtBeginDocument{
+  \DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+  \DeclareSymbolFontAlphabet{\mathbb}{AMSb}}
+
+%----------------------------------------------
+%User-defined environments
+%Commented because we're not using them in this document
+%The only uncommented ones are the Problem and Solution environment
+
+% \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{question}[2][Question]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem\!]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+%\newenvironment{sub-problem}[2][]{\begin{trivlist}
+%\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[\textbf{\textit{Solution}}]}{\end{proof}}
+%----------------------------------------------
+
+%----------------------------
+%User-defined notations
+\newcommand{\zz}{\mathbb Z}   %blackboard bold Z
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\ff}{\mathbb F}   %blackboard bold F
+\newcommand{\rr}{\mathbb R}   %blackboard bold R
+\newcommand{\nn}{\mathbb N}   %blackboard bold N
+\newcommand{\cc}{\mathbb C}   %blackboard bold C
+\newcommand{\af}{\mathbb A}   %blackboard bold A
+\newcommand{\pp}{\mathbb P}   %blackboard bold P
+\newcommand{\id}{\operatorname{id}} %for identity map
+\newcommand{\im}{\operatorname{im}} %for image of a function
+\newcommand{\dom}{\operatorname{dom}} %for domain of a function
+\newcommand{\cat}[1]{\mathscr{#1}}   %calligraphic category
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert} %for absolute value
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert} %for norm
+\newcommand{\modar}[1]{\text{ mod }{#1}} %for modular arithmetic
+\newcommand{\set}[1]{\left\{#1\right\}} %for set
+\newcommand{\setp}[2]{\left\{#1\ \middle|\ #2\right\}} %for set with a property
+\newcommand{\card}[1]{\#\,{#1}} %for cardinality of a set
+
+%Re-defined notations
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\gcd}{\operatorname{GCD}}
+\renewcommand{\Im}{\operatorname{Im}}
+%----------------------------
+
+\allowdisplaybreaks
+ 
+\begin{document}
+ 
+\title{Problem Set 6}
+\author{[Keene Ho]\\[0.5em]
+MATH 100 | Introduction to Proof and Problem Solving | Summer 2022}
+\date{} 
+\maketitle
+
+%Use \[...\] instead of $$...$$
+
+\begin{problem}{6.1}
+Prove that $7 \mid (3^{4n+1} - 5^{2n-1})$ for every positive integer $n$.
+\end{problem}
+%----------------------------------------
+\begin{solution}\hfill \\%Do not delete
+We can do proof by induction here for this statement.\\
+\textbf{Base Case    \(n = 1\):}\\
+When \(n = 1\) we have
+\[3^{4(1)+1}-5^{2(1)-1} = 3^{5}-5^1 = 238\]
+\(7 | 238\) is true because \(7 * 34 = 238\).\\
+\textbf{Inductive Hypothesis:}\\
+We can assume that the statement is true for some integer \(k\).
+\[7 | 3^{4k+1}-5^{2k-1}\]
+We can also rewrite this as 
+\[3^{4k+1}-5^{2k-1} = 7l\]
+for some integer \(l\).\\
+\textbf{Inductive Step}:\\
+We now need to prove this statement is true for \(k + 1\).
+\[7 | 3^{4(k+1)+1}-5^{2(k+1)-1}\]
+We can then rewrite this equation.
+\begin{align*}
+3^{4(k+1)+1}-5^{2(k+1)-1} &= 3^{4k+4+1}-5^{2k+2-1}\\
+&= 3^{4k+1}*3^{4}-5^{2k-1}*5^{2}\\
+&= 3^{4k+1}*81 - 5^{2k-1}*25\\
+&= (7l+5^{2k-1})81 - 5^{2k-1}*25\\
+&= 5^{2k-1}(81-25) +7l * 81\\
+&= 5^{2k-1}(56) +7l * 81\\
+&= 7(5^{2k-1}*8+81l)
+\end{align*}
+As we can see this is a factor/multiple of \(7\). Therefore \(7 | 3^{4(k+1)+1}-5^{2(k+1)-1}\) is true. This completes the proof and we have shown that $7 \mid (3^{4n+1} - 5^{2n-1})$ for every positive integer $n$.
+\end{solution}
+%----------------------------------------
+
+\newpage %Do not delete
+
+\begin{problem}{6.2}
+A sequence $\set{a_n}$ is defined recursively by $a_1 = 1,\, a_2 = 4,\, a_3 = 9$ and
+\[a_n = a_{n-1} - a_{n-2} + a_{n-3} + 2(2n - 3),\quad \text{for $n \geq 4$}\]
+\begin{itemize}[itemsep=3em]
+\item[(a)] Use the recursive relation to compute $a_4,\,a_5,\,a_6,\,a_7$.
+%----------------------------------------
+\begin{solution}\hfill %Do not delete
+%Uncomment and WRITE YOUR SOLUTION HERE
+\begin{align*}
+    a_4 &= a_3-a_2+a_1+2(2(4)-3)\\
+    &= 9-4+1+2(8-3)\\
+    &= 9-4+1+2(5)\\
+    &= 9-4+1+10\\
+    &= 16
+\end{align*}
+\begin{align*}
+    a_5 &= a_4-a_3+a_2+2(2(5)-3)\\
+    &= 16-9+4+2(10-3)\\
+    &= 16-9+4+2(7)\\
+    &= 16-9+4+14\\
+    &= 25
+\end{align*}
+\begin{align*}
+    a_6 &= a_5-a_4+a_3+2(2(6)-3)\\
+    &= 25-16+9+2(12-3)\\
+    &= 25-16+9+2(9)\\
+    &= 25-16+9+18\\
+    &= 36
+\end{align*}
+\begin{align*}
+    a_7 &= a_6-a_5+a_4+2(2(7)-3)\\
+    &= 36-25+16+2(14-3)\\
+    &= 36-25+16+2(11)\\
+    &= 36-25+16+22\\
+    &= 49
+\end{align*}
+\end{solution}
+%----------------------------------------
+
+\item[(b)] Looking at the values for $a_1,\,a_2,\,a_3,\,a_4,\,a_5,\,a_6$ and $a_7$, conjecture a formula for $a_n$, that is, an expression in terms of $n$.
+%----------------------------------------
+\begin{solution}\hfill %Do not delete
+\begin{align*}
+a_1 &= 1 = 1^2 \\
+a_2 &= 4  = 2^2\\
+a_3 &= 9  = 3^2\\
+a_4 &= 16  = 4^2\\
+a_5 &= 25 = 5^2\\
+a_6 &= 36 = 6^2\\
+a_7 &= 49 = 7^2\\
+\end{align*}
+As we can see each \(a_n\) seems to be a perfect square. We can check if this pattern holds for \(a_8 = 64\).
+\begin{align*}
+a_8 &= a_7 - a_6 + a_5 + 2(2(8) - 3) \\
+&= 49 - 36 + 25 + 2(16 - 3) \\
+&= 49 - 36 + 25 + 2(13) \\
+&= 49 - 36 + 25 + 26 \\
+&= 64
+\end{align*}
+Therefore \(a_n = n^2\)
+\end{solution}
+%----------------------------------------
+
+\item[(c)] Prove your conjecture using an appropriate principle of mathematical induction, using the recursive relation.
+%----------------------------------------
+\begin{solution}\hfill %Do not delete
+%Uncomment and WRITE YOUR SOLUTION HERE
+\\
+\textbf{Base Case \(n = 1\)}\\
+When \(n = 1\) we have 
+\[a_1 = 1^2 = 1\]
+\textbf{Inductive Hypothesis}\\
+We can assume that \(a_k = k^2\) for some positive integer \(k\).\\
+\textbf{Inductive Step}\\
+We want to show that \(a_{k+1} = (k+1)^2\). Using the given recursive relation:
+\[a_{k+1} = a_k - a_{k-1} + a_{k-2} + 2(2(k+1)-3)\]
+Now we can substitute in our inductive hypothesis \(a_k = k^2\) and that \(a_{k-1} = (k-1)^2\).
+\begin{align*}
+a_{k+1} &= k^2-(k-1)^2+a_{k-2}+2(2(k+1)-3)\\
+&=k^2-(k^2-2k+1)+a_{k-2}+2(2k+2-3)\\
+&= k^2-k^2+2k-1+a_{k-2}+2(2k-1)\\
+&= 2k - 1 + a_{k-2}+4k-2\\
+&= 6k+a_{k-2}-3
+\end{align*}
+By our hypothesis we can conclude that \(a_{k-2} = (k-2)^2\).
+\begin{align*}
+    a_{k+1} &= 6k + (k-2)^2 - 3\\
+    &= 6k + (k^2-4k+4)-3\\
+    &= k^2 + 2k + 1\\
+    &= (k+1)^2
+\end{align*}
+This completes the induction step as we have shown that \(a_{k+1} = (k+1)^2\). We have shown that \(a_n = n^2\) for all positive integers \(n\).
+\end{solution}
+%----------------------------------------
+
+\end{itemize}
+\end{problem}
+
+\newpage  %Do not delete
+
+\begin{center}
+\textbf{Collaborators:}
+%List your peers with whom you discussed the Problem Set
+\end{center}
+\vfill 
+
+\begin{center}
+\textbf{References:}
+%List any book/website/notes that you used to write your solutions
+\end{center}
+\begin{itemize}
+\item[$\bullet$] [Book(s): Title, Author]
+\item[$\bullet$] [Online: \href{http://example.com/}{Link}]
+\item[$\bullet$] [Notes: \href{http://example.com/}{Link}]
+\end{itemize}
+
+\vfill
+\begin{center}
+Fin.
+\end{center}
+\vfill
+
+\end{document}

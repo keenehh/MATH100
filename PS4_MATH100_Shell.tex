@@ -1,0 +1,327 @@
+\documentclass[11pt]{article}
+%------------------------
+%Packages
+\usepackage[top=0.75in, bottom=1.25in, left=1in, right=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb} %this is THE math package
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancybox}
+\usepackage{hyperref}
+\usepackage{varwidth}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+%------------------------
+%Fonts I use, uncomment if you like to use them.
+%The first is the general font, and the second a math font
+\usepackage{mathpazo}
+%\usepackage{eulervm}
+%------------------------
+%This is so that we have standard fonts for the doublestroked symbols
+%for reals, naturals etc. regardless of what font you use.
+%Don't comment
+\AtBeginDocument{
+  \DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+  \DeclareSymbolFontAlphabet{\mathbb}{AMSb}}
+
+%----------------------------------------------
+%User-defined environments
+%Commented because we're not using them in this document
+%The only uncommented ones are the Problem and Solution environment
+
+% \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{question}[2][Question]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem\!]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+%\newenvironment{sub-problem}[2][]{\begin{trivlist}
+%\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[\textbf{\textit{Solution}}]}{\end{proof}}
+%----------------------------------------------
+
+%----------------------------
+%User-defined notations
+\newcommand{\zz}{\mathbb Z}   %blackboard bold Z
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\ff}{\mathbb F}   %blackboard bold F
+\newcommand{\rr}{\mathbb R}   %blackboard bold R
+\newcommand{\nn}{\mathbb N}   %blackboard bold N
+\newcommand{\cc}{\mathbb C}   %blackboard bold C
+\newcommand{\af}{\mathbb A}   %blackboard bold A
+\newcommand{\pp}{\mathbb P}   %blackboard bold P
+\newcommand{\id}{\operatorname{id}} %for identity map
+\newcommand{\im}{\operatorname{im}} %for image of a function
+\newcommand{\dom}{\operatorname{dom}} %for domain of a function
+\newcommand{\cat}[1]{\mathscr{#1}}   %calligraphic category
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert} %for absolute value
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert} %for norm
+\newcommand{\modar}[1]{\text{ mod }{#1}} %for modular arithmetic
+\newcommand{\set}[1]{\left\{#1\right\}} %for set
+\newcommand{\setp}[2]{\left\{#1\ \middle|\ #2\right\}} %for set with a property
+\newcommand{\card}[1]{\#\,{#1}} %for cardinality of a set
+
+%Re-defined notations
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\gcd}{\operatorname{GCD}}
+\renewcommand{\Im}{\operatorname{Im}}
+%----------------------------
+
+\allowdisplaybreaks
+ 
+\begin{document}
+ 
+\title{Problem Set 4}
+\author{[Keene Ho]\\[0.5em]
+MATH 100 | Introduction to Proof and Problem Solving | Summer 2023}
+\date{} 
+\maketitle
+
+%Use \[...\] instead of $$...$$
+
+\begin{problem}{4.1}\hfill
+\begin{itemize}[itemsep=3em]
+\item[(a)] Let $x \in \zz$. Prove that $3x + 1$ is even if and only if $5x - 2$ is odd.
+%----------------------------------------
+\begin{solution}
+\(P \iff Q\)
+Let \(x \in \zz\).\\
+Case 1: If \(3x+1\) is even then \(5x-2\) is odd. \(P \implies Q\)\\
+I am going to try to figure out what type of number \(x\) is. Either even or odd.
+Let \(3x+1\) be even. If \(x\) is an even number then \(x = 2k\) for some integer \(k\). 
+\[3(2k)+1\]
+\[2(3k)+1\]
+If \(x\) were to be even then it would make \(3x+1\) odd. We can check this as well. Let \(x\) now be an odd number. \(x = 2m + 1\) for some integer \(m\).
+\[3(2m+1)+1\]
+\[6m+3+1\]
+\[6m+4\]
+\[2(3m+2)\] where \(3m+2\) is just some integer. So \(x\) has to be an odd number for \(3x+1\) to be even. Then we check if \(5x-2\) is odd.
+\[5(2m+1)-2\]
+\[10m+5-2\]
+\[10m+3\]
+\[2(5m+1)+1\] where \(5m+1\) is just some integer. \(5x-2\) is odd. \\
+Case 2: If \(5x-2\) is odd then \(3x+1\) is even.\(Q \implies P\)\\
+Let \(5x-2\) be odd. If \(x\) is an odd number then \(x = 2l + 1\) for some integer \(l\).
+\[5(2l+1)-2\]
+\[10l+5-2\]
+\[10l+3\]
+\[2(5l+1)+1\]. In this case \(x\) has to be odd for \(5x-2\) to be odd. (Now that I think about it, I didn't need this work based on the first case. We already know \(x\) must be odd).\\
+Now we substitute \(x\) into \(3x+1\) and check if its even.
+\[3(2l+1)-1\]
+\[6l+3-1\]
+\[6l+2\]
+\[2(3l+1)\] where \(3l+1\) is just some integer. \(3x+1\) is even.\\
+So by proving both implications we are done and that \(3x+1\) is even if and only if \(5x-2\) is odd.
+\end{solution}
+%----------------------------------------
+
+\item[(b)] Let $a, b \in \zz$. Prove that if $a + b$ and $ab$ are of the same parity, then $a$ and $b$ are even.
+%----------------------------------------
+\begin{solution}
+Contrapositive. If \(a\) or \(b\) is odd then \(a+b\) and \(ab\) do not have the same parity. We will then have 3 cases where \(a\) is odd \(b\) is even, \(a\) is even \(b\) is odd, and \(a\) is odd \(b\) is odd. For the first two cases, we essentially only need to do one of them WLOG (I dont know if I am using that term correctly).\\
+Case 1/2: \(a\) is odd and \(b\) is even.\\
+\(a = 2k + 1\) where \(k\) is some integer. \(b = 2m\) where \(m\) is some integer. 
+\[a+b = 2k+1+2m\]
+\[a+b = 2(k+m)+1\] where \(k\) and \(m\) is just some integer. \(a+b\) is odd.
+Now we need to do \(ab\).
+\[ab = (2k+1)(2m)\]
+\[ab = 4km+2k\]
+\[ab = 2(2km+k)\] inside is also just some integer as well. \(ab\) is even. This first case proves the contrapositive statement.\\
+Case 3: \(a\) is odd and \(b\) is odd.
+By odd definition \(a = 2k + 1\) where \(k\) is some integer. \(b = 2m+1\) where \(m\) is some integer. 
+\[a+b = 2k+1+2m+1\]
+\[a+b = 2k+2m+2\]
+\[a+b = 2(k+m+1)\] where \(k+m+1\) is just some integer. \(a+b\) is even.
+Now we need to do \(ab\).
+\[ab = (2k+1)(2m+1)\]
+\[ab = 4km+2k+2m+1\]
+\[ab = 2(2km+k+m)+1\] where \(2km+k+m\) is just some integer.\(ab\) is odd.\\
+This completes the proof for the contrapositive statement so it implies that if \(a+b\) and \(ab\) are of the same parity, then \(a\) and \(b\) are even.
+\end{solution}
+%----------------------------------------
+
+\end{itemize}
+\end{problem}
+
+\newpage %Do not delete
+
+\begin{problem}{4.2}\hfill
+\begin{itemize}[itemsep=3em]
+\item[(a)]Let $a, b \in \zz$, where $a \neq 0$ and $b \neq 0$. Prove that if $a \mid b$ and $b \mid a$, then $a = b$ or $a = -b$.
+%----------------------------------------
+\begin{solution}
+(I looked at my number theory notes because I had this exact question)\\
+Let \(a \mid b\) and \(b \mid a\). \(a \mid b\) some integer \(k \in \mathbb{Z}\) that \(b = ak\). \(b \mid a\) some integer  \(L \in \mathbb{Z}\) that \(a = bL\).\\
+\(b = ak\)\\
+\(a = bL\)\\
+Then we can substitute in.\\
+\(b = (bL)k\)\\
+\(b - bLk = 0\)\\
+\(b(1-Lk) = 0\)\\
+\(1 - Lk = 0 \) since \(b \neq 0\).
+\(Lk = 1\),\(L = K = 1\) since \(1 * 1 = 1\) or \(L = K = -1\) since \(-1 * -1 = 1\)\\
+Going back to what we had before \(a = bL\),\(a = b(1)\), thus \(a = b\)\\
+\(a = bL\), \(a = b(-1)\) so \(a = -b\). End of Proof
+\end{solution}
+%----------------------------------------
+
+\item[(b)] Let $x$ and $y$ be \emph{even} integers. Prove that $x^2 \equiv y^2 \modar{16}$ if and only if either
+\begin{itemize}
+\item[(1)] $x \equiv 0 \modar{4}$ and $y \equiv 0 \modar{4}$; or
+\item[(2)] $x \equiv 2 \modar{4}$ and $y \equiv 2 \modar{4}$
+\end{itemize}
+%----------------------------------------
+\begin{solution}
+\(P \iff Q\).
+Let \(x\) and \(y\) be even integers. \\
+\(P \implies Q\) \\
+Assume that \(x^2 \equiv y^2 \modar{16}\). We only have two cases where \(x\) and \(y\) are even which are $x \equiv 0 \modar{4}$ and $y \equiv 0 \modar{4}$ or $x \equiv 2 \modar{4}$ and $y \equiv 2 \modar{4}$. In the case where \(x\) is divisible by 4 and \(y\) is not we would also have the case where \(y\) is divisible by 4 and \(x\) is not. These would be impossible cases. WLOG\\
+\(x = 4m\) for some integer m and \(y = 4n + 2\) for some integer n.
+\[x^2 - y^2 = (4m)^2 - (4n+2)^2\]
+\[= 16m^2-16n^2-16n-4\]
+\[= 16(m^2-n^2-16)-4\] thus \(x^2 \not\equiv y^2 \modar{16}\)\\
+Case: Where both \(x\) and \(y\) is divisible by \(4\).
+\(x = 4k\) and \(y = 4l\) for some integers \(k\) and \(l\).
+\[x^2-y^2 = (4k)^2 - (4l)^2\]
+\[= 16k^2-16l^2\]
+\[=16(k^2-l^2)\] \(k^2-l^2\) are just some integer so \(16| x^2 - y^2\) thus \(x^2 \equiv y^2 \modar{16}\)\\
+Case: Where both aren't divisible by \(4\).
+\(x = 4m + 2\) and \(y = 4z + 2\) for some integer \(m\) and \(z\).
+\[x^2 - y^2 = (4m+2)^2-(4z+2)^2\]
+\[= 16m^2+16m-16z^2-16z\]
+\[= 16(m^2+m-z^2-z)\] \(m^2+m-z^2-z)\) are just some integer so \(16|x^2-y^2\) thus \(x^2 \equiv y^2 \modar{16}\).
+\(Q \implies P\) \\
+If either $x \equiv 0 \modar{4}$ and $y \equiv 0 \modar{4}$ or $x \equiv 2 \modar{4}$ and $y \equiv 2 \modar{4}$ then $x^2 \equiv y^2 \modar{16}$
+WTS: \(x^2 = 16k + y^2\) or \(x^2-y^2 = 16k\) for some integer \(k.\)\\
+Case 1: If \(x \equiv 0 \modar{4}\) and \(y \equiv 0 \modar{4}\)
+\(x = 4k\) and \(y = 4l\) for some integers \(k\) and \(l\).
+\[x^2-y^2 = (4k)^2 - (4l)^2\]
+\[= 16k^2-16l^2\]
+\[=16(k^2-l^2)\] \(k^2-l^2\) are just some integer so \(16| x^2 - y^2\) thus \(x^2 \equiv y^2 \modar{16}\)\\
+Case 2: If \(x \equiv 2 \modar{4}\) and \(y \equiv 2 \modar{4}\)
+\(x = 4m + 2\) and \(y = 4z + 2\) for some integer \(m\) and \(z\).
+\[x^2 - y^2 = (4m+2)^2-(4z+2)^2\]
+\[= 16m^2+16m-16z^2-16z\]
+\[= 16(m^2+m-z^2-z)\] \((m^2+m-z^2-z)\) are just some integer so \(16|x^2-y^2\) thus \(x^2 \equiv y^2 \modar{16}\).
+By proving both implications we are done.
+\end{solution}
+%----------------------------------------
+
+\item[(c)] Prove for every two real numbers $x$ and $y$ we have $\abs{x + y} \geq \abs{x} - \abs{y}$.
+%----------------------------------------
+\begin{solution}
+We want to consider all possible cases of when both \(x\) and \(y\) are nonnegative, when \(x\) is nonnegative and \(y\) is negative, when \(x\) is negative and \(y\) is nonnegative, and when both are negative. 
+LHS - RHS \(\geq 0\)\\
+Case 1: \(x\) and \(y\) are nonnegative.\\
+Let \(x \geq 0\) and \(y \geq 0\).
+\(|x+y| = x+y\), \(|x| = x\) and \(|y| = y\)
+\[x+y \geq x-y\]
+\[2y \geq 0\]
+Case 2: \(x\) is nonnegative and \(y\) is negative.\\
+Let \(x \geq 0\) and \(y < 0\).
+\(|x+y| = x-y\), \(|x| = x\) and \(|y| = -y\)
+\[x-y \geq x+y\]
+\[-2y \geq 0\]
+Inequality holds as \(y\) is negative.
+Case 3: \(x\) is negative and \(y\) is nonnegative\\
+Let \(x < 0\) and \(y \geq 0\).
+\(|x+y| = -x+y\), \(|x| = -x\) and \(|y| = y\)
+\[-x+y \geq -x-y\]
+\[y \geq -y\]
+\[2y \geq 0\]
+This holds
+Case 4: \(x\) and \(y\) are negative.
+Let \(x < 0\) and \(y < 0\).
+\(|x+y| = -(x+y)\), \(|x| = -x\) and \(|y| = -y\)
+\[-x+-y \geq -x+y\]
+\[-2y \geq 0\]
+This holds as \(y\) is negative.
+The given inequality $\abs{x + y} \geq \abs{x} - \abs{y}$ holds true.
+\end{solution}
+%----------------------------------------
+
+\end{itemize}
+\end{problem}
+
+\newpage  %Do not delete
+
+\begin{problem}{4.3}\hfill
+\begin{itemize}[itemsep=3em]
+\item[(a)] Prove that for every two sets $A$ and $B$, the sets $A \setminus B,\, B \setminus A$ and $A \cap B$ are pairwise disjoint. Give an element-wise proof.
+%----------------------------------------
+\begin{solution}
+Disjoint = \(A \cap B = \emptyset\) no elements in common.\\
+Case 1: \(A \setminus B \cap B \setminus A\)
+Suppose there exists an element \(x\) that is in both \(A \setminus B\) and \(B \setminus A\). This means that \(x\) is in \(A\) but not in \(B\), but at the same time, \(x\) is in \(B\) but not in \(A\). This would be a contradiction because the element cannot be both in \(A\) and not in \(A\) at the same time. \(A \setminus B \cap B \setminus A = \emptyset\)\\
+Case 2: \(A \setminus B \cap A \cap B\)
+Suppose there exists an element \(x\) that is in both \(A \setminus B\) and \(A \cap B\). This implies that \(x\) is in \(A\) but not in \(B\), and x is in both \(A\) and \(B\). This would be a contradiction since an element cannot be both not in \(B\) and in \(B\) at the same time. \(A \setminus B \cap A \cap B = \emptyset\)\\
+Case 3: \(B \setminus A \cap A \cap B\).
+Suppose there exists an element \(x\) that is in both \(B \setminus A\) and \(A \cap B\). This implies that \(x\) is in \(B\) but not in \(A\), and x is in both \(A\) and \(B\). Like before, this is a contradiction since an element cannot be both not in \((A\) and in \(A\) at the same time. So \(B \setminus A \cap A \cap B\) will be an empty intersection.
+So the sets $A \setminus B,\, B \setminus A$ and $A \cap B$ are pairwise disjoint.
+(Note: Dont need to be \(A \cap B \cap B \setminus A\) because of commutative. Also \(B \setminus A \cap A \setminus B\)).
+\end{solution}
+%----------------------------------------
+
+\item[(b)] Show, using set operation laws, that for every three sets $A,\, B$ and $C$ that \[A \setminus (B \setminus C) = (A \cap C) \cup (A \setminus B).\]
+%----------------------------------------
+\begin{solution}
+WTS: LHS = RHS.
+\[A \setminus (B \setminus C)\]
+Set Difference \(X \setminus Y = X \cap Y^c\)
+\[A \setminus (B \cap C^c)\]
+Apply Set Difference Again
+\[A \cap (B \cap C^c)^c\]
+De Morgan's laws \((X \cap Y)^c = X^c \cup Y^c\)
+\[A \cap (B^c \cup C^{c^{c}})\]
+Double Complement
+\[A \cap (B^c \cup C)\]
+Distribute \(A \cap(B \cup C) = (A \cap B) \cup (A \cap C)\)
+\[(A \cap B^c) \cup (A \cap C)\]
+Set Difference Again \(X \setminus Y = X \cap Y^c\)
+\[(A \setminus B) \cup (A \cap C)\]
+Commutative
+\[(A \cap C) \cup (A \setminus B)\]
+This shows that the LHS is equal to the RHS.
+\end{solution}
+%----------------------------------------
+
+\end{itemize}
+\end{problem}
+
+\newpage  %Do not delete
+
+\begin{center}
+\textbf{Collaborators:}
+%List your peers with whom you discussed the Problem Set
+\end{center}
+\vfill 
+
+\begin{center}
+\textbf{References:}
+%List any book/website/notes that you used to write your solutions
+\end{center}
+\begin{itemize}
+\item[$\bullet$] [Book(s): Title, Author]
+\item[$\bullet$] [Online: \href{http://example.com/}{Link}]
+\item[$\bullet$] [Notes: \href{http://example.com/}{Link}]
+\end{itemize}
+
+\vfill
+\begin{center}
+Fin.
+\end{center}
+\vfill
+
+\end{document}

@@ -1,0 +1,226 @@
+\documentclass[11pt]{article}
+%------------------------
+%Packages
+\usepackage[top=0.75in, bottom=1.25in, left=1in, right=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb} %this is THE math package
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancybox}
+\usepackage{hyperref}
+\usepackage{varwidth}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+%------------------------
+%Fonts I use, uncomment if you like to use them.
+%The first is the general font, and the second a math font
+\usepackage{mathpazo}
+%\usepackage{eulervm}
+%------------------------
+%This is so that we have standard fonts for the doublestroked symbols
+%for reals, naturals etc. regardless of what font you use.
+%Don't comment
+\AtBeginDocument{
+  \DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+  \DeclareSymbolFontAlphabet{\mathbb}{AMSb}}
+
+%----------------------------------------------
+%User-defined environments
+%Commented because we're not using them in this document
+%The only uncommented ones are the Problem and Solution environment
+
+% \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{question}[2][Question]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem\!]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+%\newenvironment{sub-problem}[2][]{\begin{trivlist}
+%\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[\textbf{\textit{Solution}}]}{\end{proof}}
+%----------------------------------------------
+
+%----------------------------
+%User-defined notations
+\newcommand{\zz}{\mathbb Z}   %blackboard bold Z
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\ff}{\mathbb F}   %blackboard bold F
+\newcommand{\rr}{\mathbb R}   %blackboard bold R
+\newcommand{\nn}{\mathbb N}   %blackboard bold N
+\newcommand{\cc}{\mathbb C}   %blackboard bold C
+\newcommand{\af}{\mathbb A}   %blackboard bold A
+\newcommand{\pp}{\mathbb P}   %blackboard bold P
+\newcommand{\id}{\operatorname{id}} %for identity map
+\newcommand{\im}{\operatorname{im}} %for image of a function
+\newcommand{\dom}{\operatorname{dom}} %for domain of a function
+\newcommand{\cat}[1]{\mathscr{#1}}   %calligraphic category
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert} %for absolute value
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert} %for norm
+\newcommand{\modar}[1]{\text{ mod }{#1}} %for modular arithmetic
+\newcommand{\set}[1]{\left\{#1\right\}} %for set
+\newcommand{\setp}[2]{\left\{#1\ \middle|\ #2\right\}} %for set with a property
+\newcommand{\card}[1]{\#\,{#1}} %for cardinality of a set
+\newcommand{\defeq}{\overset{\text{\tiny def}}{=}}
+
+%Re-defined notations
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\gcd}{\operatorname{GCD}}
+\renewcommand{\Im}{\operatorname{Im}}
+%----------------------------
+
+\allowdisplaybreaks
+ 
+\begin{document}
+ 
+\title{Problem Set 8}
+\author{[Keene Ho]\\[0.5em]
+MATH 100 | Introduction to Proof and Problem Solving | Summer 2023}
+\date{} 
+\maketitle
+
+%Use \[...\] instead of $$...$$
+
+\begin{problem}{8.1}
+Give an example, with an explanation, of functions for the following if you think examples exist. If you think no such example exists, prove why \begin{enumerate}
+    \item [(a)] An injective but not surjective function
+    \begin{solution}
+    %Uncomment and WRITE YOUR SOLUTION HERE
+    Let \(f: \mathbb{N} \to \mathbb{N}\) be defined as \(f(x) = x^2.\). The square numbers are distinct from each other so no two elements of the domain has the same image and no element of the co-domain is the image of more than one element in the domain. The square of different natural numbers is always distinct making this function injective. It is not surjective because there exist no \(x \in \mathbb{N}\) such that \(f(x) = 2\). \(x = \sqrt{2} \text{ or } x = -\sqrt{2}\) which isnt a natural number.
+    \end{solution}
+    %----------------------------------------
+    \item [(b)] Let \(A = \{a,b,c\}\). A surjective function \(f: A \to \mathcal{P}(A)\) 
+    \begin{solution}
+    %Uncomment and WRITE YOUR SOLUTION HERE
+    No example exists. Since the power set \(\mathcal{P}(A)\) contains subsets with more elements than \(A\), it is not possible to find a surjective function from \(A\) to \(\mathcal{P}(A)\) because not all subsets in \(\mathcal{P}(A)\) can be reached from the finite set \(A\) by a function.
+    \end{solution}
+    %----------------------------------------
+    \item [(c)] A function that is neither surjective nor injective 
+    \begin{solution}
+    Let \(f: \mathbb{Z} \to \mathbb{Z}\) be defined as \(f(x) = x^2\). It is not surjective because there is no integer \(x \in \mathbb{Z}\) that \(f(x) = -1\). It is not injective because \(f(1) = f(-1) = 1\).
+    \end{solution}
+    %----------------------------------------
+    \item [(d)] A surjective but not injective function
+    \begin{solution}
+    %Uncomment and WRITE YOUR SOLUTION HERE
+    Let \(f: \mathbb{R} \to \mathbb{R}\) be defined as \(f(x) = 0\). It is surjective because every real number maps to \(0\). It is not injective because multiple distinct real numbers are mapped to the same value which is \(0\) in this case.
+    \end{solution}
+    %----------------------------------------
+    \item [(e)] Let \(A = \{a,b,c\}\). An injective function \(f: A \to \mathcal{P}(A)\) 
+    \begin{solution}
+    %Uncomment and WRITE YOUR SOLUTION HERE
+    This is possible since we can map each element of \(A\) to a unique subset of \(A\). This would be an example.
+    \begin{align*}
+        f(a) &= \set{a}\\
+        f(b) &= \set{b}\\
+        f(c) &= \set{c}
+    \end{align*}
+    This would be injective as it assigns a different subset of \(A\) to each element in \(A\). No two elements are mapped to the same subset.
+    \end{solution}
+\end{enumerate}
+\end{problem}
+
+\newpage % Do not delete
+
+%----------------------------------------
+
+\begin{problem}{8.2}
+Let \(A, B \) be finite sets such that \(|A| = |B| = n\). Prove by induction that there are \(n!\) bijective functions from A to B.
+%----------------------------------------
+\begin{solution}
+%Uncomment and WRITE YOUR SOLUTION HERE
+We can prove this by induction.\\
+\textbf{Base Case \(n = 1\)} When \(n = 1\), both sets \(A\) and \(B\) only have one element each. So there is only one function from \(A\) to \(B\) making it bijective, \(n! = 1!\) and the base case holds\\
+\textbf{Inductive Hypothesis} Let assume that is true for a positive integer \(k\), if \(A\) and \(B\) are finite sets with \(|A| = |B| = k\), then there are \(k!\) bijective functions from \(A\) to \(B\).\\
+\textbf{Inductive Step} We want to prove that there are \((k+1)!\) bijective functions from a set size of \(k+1\). We consider set \(A\) with \(|A| = k+1\) and \(|B| = k+1\), so \(|A| = |B| = k+1\). We can pick any element \(x\) from set \(A\) and map it to any element \(y\) from set \(B\). Since there are \(k+1\) choices, once we chosen one we can then consider the remaining \(k\) elements in set \(A\) and set \(B\).
+\[A = \set{a_1,a_2,a_3,...,a_{k+1}}, B = \set{b_1,b_2,b_3,...,b_{k+1}}\]
+\[A = \set{a_1,a_2,a_3,...,a_{k}}, B = \set{b_1,b_2,b_3,...,b_{k}}\]
+By our inductive hypothesis, there are \(k!\) bijective functions between these sets. For each choice of the image of \(x\), there are \(k!\) bijective functions between the remaining \(k\) elements of \(A\) and \(B\). Since there are \(k+1\) ways for the image of \(x\) (\(x\) could map to either \(b_1,b_2 \text{ or } b_{k+1}\) and we would get \(k!\) bijections and have \(k+1\) ways), there are \((k+1)*k! = (k+1)!\) ways to map the elements of \(A\) to the elements of \(B\) while the remaining elements are still bijective. Therefore, for each choice of \(x\), the total is \((k+1)!\) bijective functions from \(A\) to \(B\).
+\end{solution}
+%----------------------------------------
+
+\end{problem}
+
+\newpage %Do not delete
+
+\begin{problem}{8.3}
+ Let \(f: A \to B\) be a function and let \(X \subseteq A\) and \(Y \subseteq B\). Recall we defined the sets \begin{align*}
+        f(X) & = \{ y \in Y : y=f(x) \text{ for some } x \in X\} \subseteq B\\
+        f^{-1}(Y) & = \{x \in X : f(x) \in Y \} \subseteq A
+\end{align*}
+\begin{itemize}[itemsep=3em]
+    \item[(a)] Prove that \(X \subseteq f^{-1}(f(X)) \). Give an example to show that this containment can sometimes be strict (ie \( X \subsetneq f^{-1}(f(X))\))
+    \begin{solution}
+    %Uncomment and WRITE YOUR SOLUTION HERE
+    First we take any \(x \in X\), by definition, \(f(x) \in f(X)\). Now, \(f(x)\) is also in the image of \(f(X)\), so it follows that \(x \in f^{-1}(f(X))\). Since this holds for all \(x \in X\), we have shown that \(X \subseteq f^{-1}(f(X))\). For an example, we can consider the function \(f: \mathbb{R} \to \mathbb{R}\) defined as \(f(x) = x^2\), and let \(X = \set{-1,1}\). \(f(X) = \set{1}\) as both \(f(-1) = 1\) and \(f(1) = 1\). Then, \(f^{-1}(f(X)) = f^{-1}(\set{1}) = \set{-1,1}\).  So in this example, \(X \subsetneq f^{-1}(f(X))\).
+    \end{solution}
+%----------------------------------------
+    \item [(b)] Make a similar conjecture and then prove it about the relationship between Y and \(f(f^{-1}(Y))\) (is one contained in the other? If so, which one?)
+    %----------------------------------------
+    \begin{solution}
+    %Uncomment and WRITE YOUR SOLUTION HERE
+    Let \(y \in Y\). If \(y \in Y\), then there exists a \(x \in f^{-1}(Y)\) such that \(f(x) = y\), by definition of \(f^{-1}(Y)\). Since \(x \in f^{-1}(Y)\), it follows that \(f(x) \in f(f^{-1}(Y))\). We know that \(f(x) = y\), so \(y \in f(f^{-1}(Y))\). Therefore, for any \(y \in Y\), we have shown that \(y \in f(f^{-1}(Y))\), which means that \(Y \subseteq f(f^{-1}(Y))\).
+    \end{solution}
+%----------------------------------------
+    \item [(c)] Prove that \(f: A \to B\) is injective iff for all subsets \(X \subseteq A\) we have \(X = f^{-1}(f(X)) \)
+    %----------------------------------------
+    \begin{solution}
+    %Uncomment and WRITE YOUR SOLUTION HERE
+    We can first prove the forward direction/implication. If \(f\) is injective, then for all subsets \(X \subseteq A\), we have \(X = f^{-1}(f(X))\). We assume that \(f\) is injective and take any subset \(X \subseteq A\). We want to show that \(X = f^{-1}(f(X))\).\\
+    \textbf{(1)}. \(X = f^{-1}(f(X))\). Let \(x \in X\). Since \(f(x)\) is the set of all elements \(y \in Y\) such that \(y = f(x)\) for some \(x \in X\), it means that \(f(x) \in f(X)\). Therefore \(x \in f^{-1}(f(X))\), and since it holds for all \(x \in X\), we have that \(X = f^{-1}(f(X))\).\\
+    \textbf{(2)}. \(f^{-1}(f(X)) \subseteq X\).  Let \(x \in f^{-1}(f(X))\). This means there exists \(y \in f(X)\) such that \(f(x) = y\). Since \(y\) is in \(f(X)\), there exists a \(x' \in X\) such that \(f(x') = y\) because \(y\) is in the image of \(f(X)\). Since \(f\) is injective then \(x = x'\). Therefore, \(x \in X\) and since this holds for all \(x \in f^{-1}(f(X))\), we have that \(f^{-1}(f(X)) \subseteq X\).\\
+    We now need to do the reverse. If for all subsets \(X \subseteq A\), we have \(X = f^{-1}(f(X))\), then \(f\) is injective. For the sake of contradiction, lets assume that \(f\) is not injective and there exists two distinct elements \(x_1\) and \(x_2\) in \(A\) such that \(f(x_1) = f(x_2)\). We then consider the subset \(X = \set{x_1}\) of \(A\). By our assumption, \(X = f^{-1}(f(X))\), so \(X\) must be equal to the set \(f^{-1}(\set{f(x_1)})\). But since \(f(x_1) = f(x_2)\), this means that \(X = f^{-1}(\set{f(x_2)})\), which is also just \(\set{x_2}\). This implies that \(X = \set{x_1} = {x_2}\), which contradicts the fact that \(x_1\) and \(x_2\) are distinct. Therefore, our assumption that \(f\) is not injective leads to a contradiction. So, \(f\) must be injective.
+    \end{solution}
+%----------------------------------------
+    \item [(d)] Make a similar conjecture as in part c and prove it about f being surjective.
+    \begin{solution}
+    %Uncomment and WRITE YOUR SOLUTION HERE   
+    Conjecture: \(f: A \to B\) is surjective iff for all subsets \(Y \subseteq B\), we have \(Y = f(f^{-1}(Y))\).\\
+    We can first prove the forward direction/implication. If \(f\) is surjective, then for al subsets \(Y \subseteq B\), we have that \(Y = f(f^{-1}(Y))\).\\
+    \textbf{(1)}. \(Y \subseteq f(f^{-1}(Y))\). We already established before that for any \(y \in Y\), \(y\) is in \(f(f^{-1}(Y))\). Since this holds for all \(y \in Y\), then we have shown that \(Y \subseteq f(f^{-1}(Y))\).\\
+    \textbf{(2)}. \(f(f^{-1}(Y)) \subseteq Y\). Let \(y \in f(f^{-1}(Y))\). By definition, there exists a \(x\) in \(f^{-1}(Y)\), such that \(f(x) = y\). This implies that \(y\) is in \(Y\), since \(x\) is in \(A\) and \(f(x) = y\). Therefore, \(f(f^{-1}(Y)) \subseteq Y\).\\
+    We now need to prove the reverse implication. If for all subsets \(Y \subseteq B\), we have \(Y = f(f^{-1}(Y))\), then \(f\) is surjective. Let \(y \in B\). Then we consider the subset \(Y = \set{y}\). Since \(Y\) is a subset of \(B\) by our conjecture, we have that \(Y = f(f^{-1}(Y))\), which also means that \(Y = f(f^{-1}(\set{y}))\). This would then imply that \(y = f(x)\) for some \(x \in f^{-1}(\set{y})\). Therefore \(f\) is surjective.
+    \end{solution}
+%----------------------------------------
+
+\end{itemize}
+\end{problem}
+
+\newpage  %Do not delete
+
+
+
+\begin{center}
+\textbf{Collaborators:}
+%List your peers with whom you discussed the Problem Set
+\end{center}
+\vfill 
+
+\begin{center}
+\textbf{References:}
+%List any book/website/notes that you used to write your solutions
+\end{center}
+\begin{itemize}
+\item[$\bullet$] [Book(s): Title, Author]
+\item[$\bullet$] [Online: \href{http://example.com/}{Link}]
+\item[$\bullet$] [Notes: \href{http://example.com/}{Link}]
+\end{itemize}
+
+\vfill
+\begin{center}
+Fin.
+\end{center}
+\vfill
+
+\end{document}

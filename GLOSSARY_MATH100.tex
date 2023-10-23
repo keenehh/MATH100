@@ -1,0 +1,499 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+
+\title{MATH100 Glossary}
+\author{Keene Ho}
+\date{\today} % Default date
+
+\begin{document}
+\maketitle
+
+\section{Lecture 1: July 31, 2023}
+\textbf{Set}: A collection of objects each being called elements. Elements are within braces. Uppercase letters denotes sets and lowercase letters denotes the elements in sets.\\
+\textbf{\(\in\)}: Used to denote membership of a set. For example, \(x \in A\) or \(x \notin A\). This would be \(x\) is an element in \(A\) or \(x\) is not an element in \(A\).\\
+\textbf{Cardinality}: Cardinality is the number of elements in a set. For example, if $A = \{0,1,2\}$, then $|A| = 3$.\\
+\textbf{Empty Set}: A set with no element denoted by \(\emptyset\).\\
+\textbf{Subset}: A set \(S\) is a subset of a given set \(x\) is every element of \(S\) is also an element of \(X\). For example, Let $X = \{1, 2, 3, 4, 5\}$ and $S = \{2, 4\}$. Here, $S$ is a subset of $X$ since every element in $S$ (\(2,4\)) is also in $X$.\\
+\textbf{Set-Builder Notation}: Set-builder notation is a way to describe a set by specifying the properties its elements must satisfy. For example, $A = \{ x \mid x$ is an even number $\}$ represents the set of all even numbers.\\
+\textbf{Proper Subset}: A set $S$ is a proper subset of a given set $X$ if $S$ is a subset of $X$ but not equal to $X$. In symbols, $S \subset X$ or \(S \subsetneq X\).\\
+\textbf{Power Set}: The power set of a set $S$, denoted by $\mathcal{P}(S)$ or $2^S$, is the set of all subsets of $S$, including the empty set and $S$ itself. For example, if $S = \{1, 2\}$, then $\mathcal{P}(S) = \{\emptyset, \{1\}, \{2\}, \{1, 2\}\}$.\\
+\textbf{Equality of Sets}: Two sets are equal if they have exactly the same elements. In symbols, $A = B$ if every element of $A$ is also an element of $B$, and vice versa. For example, let $A = \{1, 2, 3\}$ and $B = \{3, 2, 1\}$. They might be in a different order but, $A$ and $B$ are still equal sets because they contain exactly the same elements.\\
+\textbf{Universal Set}: The universal set, denoted by $\mathcal{U}$, is the set that contains all the elements under consideration in a particular context.\\
+\textbf{Set Intersection}: The intersection of two sets $A$ and $B$, denoted by $A \cap B$, is the set of elements that are common to both $A$ and $B$. For example, let $A = \{1, 2, 3\}$ and $B = \{2, 3, 4\}$. The intersection of $A$ and $B$ is $A \cap B = \{2, 3\}$, as these are the elements that are present in both sets.\\
+\textbf{Set Union}: The union of two sets $A$ and $B$, denoted by $A \cup B$, is the set containing all elements that belong to either $A$, $B$, or both.
+For example, let $A = \{1, 2, 3\}$ and $B = \{3, 4, 5\}$. The union of $A$ and $B$ is $A \cup B = \{1, 2, 3, 4, 5\}$, as it includes all elements present in either set.\\
+\textbf{Set Difference}: The difference between two sets $A$ and $B$, denoted by $A \setminus B$, is the set of elements that belong to $A$ but not to $B$.
+For example, let $A = \{1, 2, 3, 4, 5\}$ and $B = \{3, 4\}$. The difference $A \setminus B$ is $\{1, 2, 5\}$, as it includes the elements from $A$ that are not present in $B$.\\
+\textbf{Set Symmetric Difference}: The symmetric difference between two sets $A$ and $B$, denoted by $A \Delta B$, is the set of elements that belong to either $A$ or $B$, but not to both.For example, let $A = \{1, 2, 3, 4\}$ and $B = \{3, 4, 5\}$. The symmetric difference $A \Delta B$ is $\{1, 2, 5\}$, as it includes elements that are present in either $A$ or $B$, but not in both.\\
+\textbf{Complement of a Set}: The complement of a set $A$, denoted by $A^C$ or $\bar{A}$, is the set of all elements in the universal set that do not belong to $A$.
+For example, Let the universal set be $\mathcal{U} = \{1, 2, 3, 4, 5\}$ and $A = \{2, 4\}$. The complement of $A$, denoted by $A^C$ or $\bar{A}$, is $\{1, 3, 5\}$, as these are the elements in $\mathcal{U}$ that are not in $A$.\\
+\textbf{Identities}: 
+\[A \setminus B = A \cap B^C\]
+\[(A \cap B)^C = A^C \cup B^C\]
+\[(A \cup B)^C = A^C \cap B^C\]
+\\
+\textbf{Cartesian Product}: The Cartesian product of two sets $A$ and $B$, denoted by $A \times B$, is the set of all possible ordered pairs $(a, b)$ where $a$ is an element of $A$ and $b$ is an element of $B$. For example, let $A = \{1, 2\}$ and $B = \{a, b, c\}$. The Cartesian product $A \times B$ is $\{(1, a), (1, b), (1, c), (2, a), (2, b), (2, c)\}$, representing all possible combinations of elements from $A$ and $B$.
+
+\section{Lecture 2: August 2, 2023}
+\textbf{Statement}: A statement is a declarative sentence that can be objectively determined to be either true or false. For example, the integer \(12\) is divisible by \(4\) is a statement and we can prove this is true.\\
+\textbf{Negation (\(\neg\))}: The negation of a statement \(P\), denoted as \(\neg P\) or not \(P\), is true when \(P\) is false, and vice versa.\\
+\textbf{Disjunction (\(\lor\))}: The disjunction of two statements \(P\) and \(Q\), denoted as \(P \lor Q\), is true when at least one of \(P\) or \(Q\) is true.\\
+\textbf{Conjunction (\(\land\))}: The conjunction of two statements \(P\) and \(Q\), denoted as \(P \land Q\), is true only when both \(P\) and \(Q\) are true.\\
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\(P\) & \(Q\) & \(P \lor Q\) & \(P \land Q\) \\
+\hline
+True & True & True & True \\
+True & False & True & False \\
+False & True & True & False \\
+False & False & False & False \\
+\hline
+\end{tabular}
+\end{center}
+\textbf{Tautology}: A statement that is always true.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\(P\) & \(\neg P\) & \(P \lor \neg P\) \\
+\hline
+True & False & True \\
+False & True & True \\
+\hline
+\end{tabular}
+\end{center}
+\textbf{Implication (\(\rightarrow\))}:\(P \rightarrow Q\). \(P\) is called the hypothesis and \(Q\) is called the conclusion. The implication \(P \rightarrow Q\) is true unless \(P\) is true and \(Q\) is false. If \(P\) is false, the implication is true regardless of \(Q\).\\
+\textbf{Open Sentences}: A open sentence is a statement that uses variables and becomes true or false when we plug in specific values for the variables. For example,  \(x > 3\), where \(x\) is a variable representing a number. It's not a complete until we give \(x\) a specific value. If we let \(x = 5\), then the open sentence becomes the true statement \(5 > 3\). We also use quantifiers but I will talk about that later.\\
+\textbf{Converse} The implication \(Q \rightarrow P\) is called the converse of \(P \rightarrow Q\). For example, If it's raining (\(P\)), then the ground is wet (\(Q\)). The converse \(Q \rightarrow P\) would be: If the ground is wet (\(Q\)), then it's raining (\(P\)).\\
+\textbf{Biconditional}: Given the statements \(P\) and \(Q\), the biconditional of \(P\) and \(Q\) is the statement: \((P \rightarrow Q) \land (Q \rightarrow P)\) denoted by \(P \leftrightarrow Q\). We would read this as \(P\) if and only if \(Q\) (iff).
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\(P\) & \(Q\) & \(P \leftrightarrow Q\) \\
+\hline
+True & True & True \\
+True & False & False \\
+False & True & False \\
+False & False & True \\
+\hline
+\end{tabular}
+\end{center}
+\textbf{Compound Statement}: A compound statement is a statement that is formed by combining two or more simpler statements using logical connectives. The biconditional \(P \leftrightarrow\) is an example of a compound statement.\\
+\textbf{Tautology}: A compound statement is called a tautology if the statement is always true for any truth value of the component statements.\\
+\textbf{Contradiction}:  A compound statement is called a contradiction if the statement is always false for any truth value of the component statements.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\(P\) & \(\neg P\) & \(P \land \neg P\) \\
+\hline
+True & False & False \\
+False & True & False \\
+\hline
+\end{tabular}
+\end{center}
+\textbf{Logical Equivalences} Two compound statements are called logically equivalent if they have the same truth values for all combinations of truth values of their component statements. It is denoted as \(R \equiv S\).\\
+\textbf{Laws of Logical Equivalence}: Let \(P\), \(Q\) and \(R\) be statements, and let \(\top\) and \(\bot\) be a tautology and contradiction.\\
+Identity laws:
+\[P \lor \bot \equiv P\]
+\[P \land \top \equiv P\]
+Domination laws:
+\[P \lor \top \equiv \top\]
+\[P \land \bot \equiv \bot\]
+Double Negation laws:
+\[\neg(\neg P) \equiv P\]
+Commutative laws:
+\[P \land Q \equiv Q \land P\]
+\[P \lor Q \equiv Q \lor P\]
+Associative laws:
+\[P \lor (Q \lor R) \equiv (P \lor Q) \lor R\]
+\[P \land (Q \land R) \equiv  (P \land Q) \land R\] 
+Distributive laws:
+\[P \lor (Q \land R) \equiv (P \lor Q) \land (P \lor R)\]
+\[P \land (Q \lor R) \equiv (P \land Q) \lor (P \land R)\]
+De Morgan's laws:
+\[\neg (P \lor Q) \equiv (\neg P) \land (\neg Q)\]
+\[\neg (P \land Q) \equiv (\neg P) \lor (\neg Q)\]
+The logical equivalence \(\neg (P \rightarrow Q) \equiv (P \land \neg Q)\) using a truth table.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\(P\) & \(Q\) & \(P \rightarrow Q\) & \(\neg (P \rightarrow Q)\) & \(P \land \neg Q\) \\
+\hline
+True & True & True & False & False \\
+True & False & False & True & True \\
+False & True & True & False & False \\
+False & False & True & False & False \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Lecture 3: August 4, 2023}
+\textbf{Quantified Statements}: Let \(P(x)\) be an open sentence over a domain \(S\). This is an open statement once we fix or specify an \(x \in S\). This allows us to create specific types of statements from open sentences called quantified statements.
+
+\textbf{Universal Quantification (\(\forall\))}: The universal quantifier \(\forall\) asserts that a statement holds true for all possible values of a variable. The phrase "for all" is referred to this. Other ways to express this is "for every", "for any", and "for each".
+
+\textbf{Existential Quantification (\(\exists\))}: The existential quantifier \(\exists\) asserts that there exists at least one value of a variable for which a statement is true. The phrase "there exists" is referred to this.\\
+Example: Consider the open sentence \(P(n): n^2+n\) is even with domain \(\mathbb{Z}\), the set of integers.\\
+For all \(n \in \mathbb{Z}, n^2+n\) is even. \(\forall n \in \mathbb{Z}, P(n)\). True\\
+There exists an \(n \in \mathbb{Z}\) such that \(n^2+n\) is even. \(\exists n \in \mathbb{Z}, P(n)\). True\\
+\textbf{Negation Rules}:
+\[\land \leftrightarrow \lor\]
+\[\forall \leftrightarrow \exists\]
+\[P(x) \leftrightarrow \neg P(x)\]
+Example: \(\forall x \in \mathbb{R} (x^2 > 0)\). The negation of this is \(\exists x \in \mathbb{R} (x^2 \leq 0)\).\\
+\textbf{Trivial Proof}: Suppose we are given an implication of open sentences \(P(x) \rightarrow Q(x)\) over a domain \(S\), if \(Q(s)\) is true for any \(x \in S\), then we recall that \(P(x) \rightarrow Q(x)\) is true for any \(x \in S\), regardless of what truth values \(P(x)\) takes for any \(x \in S\). This would be a trivial proof, as the conclusion is always true.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\(P\) & \(Q\) & \(P \rightarrow Q\) \\
+\hline
+True & True & True \\
+True & False & False \\
+False & True & True \\
+False & False & True \\
+\hline
+\end{tabular}
+\end{center}
+\textbf{Vacuous Proof} Similar to trivial proof but the hypothesis is always false so the statement is always true.\\
+Example: Let \(x \in \mathbb{R}\), show that if \(x^2-2x+2 \leq 0\), then \(x^3 \geq 0\).\\
+Let \(x \in \mathbb{R}\). Notice that \(x^2-2x+2 = (x-1)^2+1 > 0\). Therefore \(x^2-2x+2 \leq 0\) is false. Therefore the statement if \(x^2-2x+2 \leq 0\), then \(x^3 \geq 0\) is true vacuously.
+\textbf{Direct Proof} Consider \(P(x) \rightarrow Q(x)\) over a domain \(S\). For a direct proof we consider a \(x \in S\) for which \(P(x)\) is true and show that \(Q(x)\) is also true for this \(x\).\\
+Example: If \(n\) is an odd integer, then \(n\pm1\) is even.\\
+Proof: Assume that \(n\) is an odd integer, then we would need to show that \(n+1\) and \(n-1\) is even. By direct proof the structure is \(\forall n \in S\),\(P(n) \implies Q(n)\) where \(S\) is the set of odd integers, since then \(P(n)\): \(n\) is an odd integer is true for every \(n \in S\). While \(Q(n)\): \(n+1\) and \(n-1\) is even. Since \(n\) is odd, therefore there exists an integer \(k\) such that \(n = 2k+1\). Hence, 
+\[n-1 = (2k+1)-1 = 2k\]
+\[n+1 = (2k+1)+1 = 2(k+1)\]
+Thus we have that \(n-1\) and \(n+1\) are even.
+\section{Lecture 4: August 7, 2023}
+\textbf{Modular Congruence Notes/Stuff}:
+\[a \equiv b \mod m \]
+\[a = mk + b\] for some integer \(k\).\\
+\begin{enumerate}
+\item \(a \equiv b \mod m\)
+\item There exists \(k \in \mathbb{Z}\) such that \(a=b+km\).
+\item If we divide \(a\) and \(b\) by \(m\), i.e. we obtain \(a=mq_1+r_1\)
+and \(b=mq_2+r_2\), then \(r_1=r_2\).
+\end{enumerate}
+\textbf{Contrapositive}:Let \(P\) and \(Q\) be statements. \(P \implies Q \equiv (\neg Q \implies \neg P)\). We can show this is logically equivalent by using a truth table or laws. 
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\(P\) & \(Q\) & \(\neg P\) & \(\neg Q\) & \(P \implies Q\) & \(\neg Q \implies \neg P\) \\
+\hline
+True & True & False & False & True & True \\
+True & False & False & True & False & False \\
+False & True & True & False & True & True \\
+False & False & True & True & True & True \\
+\hline
+\end{tabular}
+\end{center}
+Using this we can prove the implication \(P \implies Q\) it is the same as proving its contrapositive \(\neg Q \implies \neg P\). For example, suppose \(x,y \in \mathbb{R}\). If \(y^3+yx^2 \leq x^3 + xy^2,\) then \(y \leq x\). The contrapositive of this would be, if \(y > x\), then \(y^3+yx^2 > x^3+xy^2\).\\
+\textbf{Proof by cases}: Proof by cases is where a statement is proven true by considering and proving each possible case individually.\\
+Example: Let \(x\) and \(y\) be integers. Prove that \(xy\) is even if and only if \(x\) or \(y\) is even.\\
+Proof. Suppose \(x,y\) are integers, we want to the prove the following two statements:\\
+(1) if \(xy\) is even, then \(x\) or \(y\) is even.\\
+(2) if \(x\) or \(y\) is even, then \(xy\) is even.\\
+We can prove (1) by using the contrapositive. If \(x\) and \(y\) are odd, then \(xy\) is odd. Since \(x\) and \(y\) are odd, there exists integers \(k\) and \(l\) such that \(x = 2k+1\) and \(y = 2l+1\). Therefore
+\[xy=(2k+1)(2l+1) = 4kl+2(k+l)+1 = 2(2kl+k+l)+1\]
+Since \(2kl+k+1\) is just an integer, then \(xy\) is odd. For statement (2) we would need to consider two cases. Where \(x\) is even and then when \(y\) is even.\\
+\textbf{Case 1}: Suppose \(x\) is an even integer and \(y\) is any integer. We need to show that \(xy\) is even. Since \(x\) is even then there exists an integer \(m\) such that \(x = 2m\). Therefore \(xy = 2my\). Since \(my\) is just an integer, \(xy\) is even.\\
+\textbf{Case 2}: Suppose \(y\) is an even integer and \(x\) is any integer. We need to show that \(xy\) is even. Since \(y\) is even then there exists an integer \(z\) such that \(y = 2z\). Therefore \(xy = 2zx\). Since \(zx\) is just an integer, \(xy\) is even.\\
+The two cases are symmetric so technically we only needed to do one. We would say WLOG or without loss of generality and prove one case. Maybe I shouldn't have type out both cases.\\
+\textbf{Biconditional Statements}: For Biconditional Statements we need to prove both ways. As in \(P \iff Q\), we must prove \(P \implies Q\) and \(Q \implies P\). Using either direct proof, contrapositive, and the other proofing methods.\\
+Example: Prove that an integer \(n\) is even if and only if \(n^2\) is even. Let \(n \in \mathbb{Z}\)\\
+(1) if \(n\) is even then \(n^2\) is even.\\
+(2) if \(n^2\) is even then \(n\) is even.\\
+We can prove (1) directly. Suppose \(n\) is even. Then \(n = 2k\) for some integer k.
+\[n^2 = (2k)^2 = 4k^2 = 2(2k^2)\]
+Since \(2k^2\) is an integer, then \(n^2\) is even. For (2) we can do it by contrapositive. The contrapositive statement would be if \(n\) is odd, then \(n^2\) is odd. Assume \(n\) is odd. Then \(n = 2m + 1\) for some integer \(m\). 
+\[n^2 = (2m+1)^2 = 4m^2+4m+1 = 2(2m^2+2m)+1\]
+Since \(2m^2+2m\) is an integer then \(n^2\) is odd. Therefore if \(n^2\) is even then \(n\) is even.
+
+\section{Lecture 5: August 9, 2023}
+\textbf{Divisibility} For integers \(a,b\) we say \(a\) divides \(b\) if (and only if) there exists an integer \(c\) such that \(b = ac\).
+\[a|b\]
+This is read as \(a\) divides b.
+\[a\nmid b\]
+This is read as \(a\) does not divide b.\\
+\textbf{Lemma}: If \(a|b\) and \(b|c\), then \(a|c\). Proof: Let \(a,b,c \in \mathbb{Z}\). Suppose \(a|b\) and \(b|c\). WTS: \(c = ak\) for some integer \(k\) or \(a|c\). Then \(b = am\) and \(c = bl\) for some integer \(m,l \in \mathbb{Z}\).
+\[c = (am)l\]
+\[c = a(ml)\]
+\(ml \in \mathbb{Z}\) so \(a|c\).\\
+\textbf{Congruence}: For two integers \(a\) and \(b\), \(a\) is congruent to \(b\) modulo \(n\), denoted \(a \equiv b \mod n\) if and only if \(n | (a-b)\), if and only if \(a-b=nk\) for some \(k \in \mathbb{Z}\), if and only if \(a = b+nk\) for some \(k \in \mathbb{Z}\), and if and only if \(a\) and \(b\) have the same remainder when divided by \(n\).\\
+\textbf{Example/Proofs/Problems from Other Classes/In Class}:\\
+For any \(a,b,c \in \mathbb{Z}\), if \(a\mid b\) and \(b\mid c\),
+then \(a \mid c\).\\
+Proof: We want to show \(c = a * q\), \(q\) being some integer. Let \(a \mid b\) and \(b \mid c\). \(a \mid b\) some integer \(k \in \mathbb{Z}\) that \(b = ak\). \(b \mid c\) some integer  \(L \in \mathbb{Z}\) that \(c = bL\).\\
+\(b = ak\)\\
+\(c = bL\)\\
+Then we can substitute in.\\
+\(c = (ak)L\)\\
+\(c = a(kL)\)\\
+\(kL\) is going to be just some integer so I will just label it as \(n\). Closure property.\\
+\(c = a * n\)\\
+Then \(a \mid c\) End of Proof.\\
+\textbf{Congruence Example}: Suppose \(a \equiv b \mod n\) and \(c \equiv d \mod n\), then by side-by-side and multiplication.
+\[a+c \equiv b + d \mod n\]
+\[ac \equiv bd \mod n\]
+Let \(a,b,c,d,n \in \mathbb{Z}\) such that \(n > 1\). Suppose \(a \equiv b \mod n\) and \(c \equiv d \mod n\). Then \(n | a-b\) and \(n | (c-d)\). Thus \(a = b + nk\) and \(c = d+nl\) for some integers \(k\) and \(l\).
+\[a + c = (b+d)+nk+nl = (b+d)+n(k+l)\]
+\(k+l \in \mathbb{Z}\), so \(a+c \equiv b+d mod n\).\\
+Now for \(ac\).
+\[ac = (b+nk)(d+nl)=bd+bnl+dnk+nknl=bd+n(bl+dk+knl)\]
+\(bl+dk+knl \in \mathbb{Z}\), so \(ac \equiv bd \mod n\).\\
+\textbf{Linear Congruence}: This next example just helps me understand congruence stuff.
+\[5x \equiv 2 \mod 12\]
+Apply eucledian alg to \(5\) and \(12\)
+\[12 = 5(2) + 2\]
+\[5 = 2(2) + 1\]
+\[2 = 1(2)\]
+gcd\((5,12) = 1\)
+\[1 = 5+2(-2)\]
+\[1 = 5 - 12 + 5(2) - 12 + 5(2)\]
+\[1 = 12(-2)+5(5)\]
+\[2 = (12(-4)+5(10)\]
+\[5(10) = 2 + 12(4)\]
+\[5(10) \equiv 2 \mod 12\]
+\(x = 10\).\\
+\textbf{Inequality of Real Numbers}:\\
+(1). \(\forall x \in \mathbb{R}, x^2 \geq 0\)\\
+(2). To prove that the left hand side is greater than or equal to the right hand side is equivalent to proving LHS - RHS \(\geq 0\).
+Example: For \(x,y,z \in \mathbb{R}\) show that \(x^2+y^2+z^2 \geq xy+yz+zx\).\\
+Proof: Let \(x,y,z \in \mathbb{R}\). We can first subtract the RHS to the LHS.
+\[x^2+y^2+z^2-xy-yz-zx\]
+\[2x^2+2y^2+2z^2-2xy-2yz-2zx\]
+\[=(x^2-2xy-y^2)+(y^2-2yz-z^2)+(z^2-2zx+x^2)\geq 0\]
+\[=(x-y)^2+(y-z)^2+(z-x)^2 \geq 0\]
+That is, \(2((x^2+y^2+z^2)-(xy+yz+zx)) \geq 0\). So \(x^2+y^2+z^2-(xy+yz+zx) \geq 0\). Therefore \(x^2+y^2+z^2 \geq xy+yz+zx\) for each \(x,y,z \in \mathbb{R}\).\\
+\textbf{AM-GM}: Using AM-GM for some inequalities. The arithmetic mean of a list of non-negative real numbers is greater than or equal to the geometric mean of the same list\\
+Example: For \(x,y, \in \mathbb{R}\) show that \(\frac{1}{3}x^2+\frac{3}{4}y^2 \geq xy\). WTS: \(\frac{x+y}{2} \geq \sqrt{xy}\). (main amgm)\\
+Proof: Let \(x,y \in \mathbb{R}\). Consider \(\frac{1}{2}(\frac{1}{3}x^2+\frac{3}{4}y^2)\). By the AM\(\geq\)GM when \(n = 2\).
+\[\frac{1}{2}(\frac{1}{3}x^2+\frac{3}{4}y^2) \geq \sqrt{\frac{1}{3}x^2*\frac{3}{4}y^2}\]
+\[=\sqrt{\frac{1}{4}x^2y^2}\]
+\[=\frac{|x||y|}{2}\]
+So  \(\frac{1}{3}x^2+\frac{3}{4}y^2 \geq |x||y| \geq xy\) \\
+\textbf{Sets}: To prove a statements involving sets we can use:\\
+(1) Venn Diagrams\\
+(2) Element Chasing\\
+(3) Inclusion Relations\\
+\section{Lecture 6: August 11, 2023}
+\textbf{Counterexamples}: If we think the statement is false then the negation of the statement would be true. So we would then need to prove the negation.\\
+For example, if \(n\) is a positive integer, then \(2^n+1\) is a prime. If \(n = 3\) then:
+\[2^3+1 = 9\]
+\(9\) is not a prime number so \(n = 3\) would be a counterexample. I definitely like using counterexamples.\\
+\textbf{Proof by Contradiction}: Let \(R\) be a statement. To use a proof by contradiction we would need to do this:\\
+To show that \(R\) is true then we need to show that \(\neg R\) leads to a contradiction \(\bot\).\\
+Example: There is no smallest positive rational number.\\
+Proof: Assume to the contary, that there exists a smallest rational number \(r > 0\). But then \(0 < \frac{0}{2} < r\) and \(r < 2\) is also rational. That is, \(\frac{r}{2}\) is a smallest rational number than \(r\), contradiction the assumption that \(r\) was the smallest number. Therefore, there's no smallest positive rational numbers.
+\\Little note: When making this glossary go look at number theory notes and combine.\\
+\textbf{Existence Proofs} For this type of proof we want to prove a statement like 
+\[\exists x \in S, P(x)\]
+We want to prove the existence of an object \(x\) with a certain property \(P(x)\). It only shows that it must exists.\\
+For example, "There exists an integer \(x\) such that \(x^2 = 9\)." To prove this by existence, we can show that both \(x = 3\) and \(x = -3\) satisfy the equation \(x^2 = 9\). Therefore, we have proven the existence of an integer \(x\).
+
+\section{Lecture 7: August 14, 2023}
+\textbf{Uniqueness Proof}: \(\exists x \in S, R(x)\) For this type of situation proof we need to show that there exists a unique \(x \in S\) such that \(R(x)\) is true.\\
+For example, lets prove that there exists a unique solution to the equation \(x^2 - 4 = 0\) in the open interval \((1,3)\).\\
+Proof: Let \(f(x) = x^2 - 4\), not that \(f(1) = -3 < 0\) and \(f(3) = 4 > 0\). Therefore by IVT, there exists a \(c \in (1,3)\) such that \(f(c) = 0.\). Now, suppose there exists a \(c_1,c_2 \in (1,3)\) such that \(f(c_1) = f(c_2) = 0\). We wish to show that \(c_1 = c_2\). By assumption
+\[c^{2}_1-4 = 0\] and \[c^{2}_2 - 4 = 0\]
+When we take the difference of both we get \(c^{2}_1-c^{2}_2 = 0\). We note that \(c^{2}_1-c^{2}_2 = (c_1-c_2)(c_1+c_2)\) and since \(c_1,c_2  > 1\) therefore \(c_1+c_2 > 0\). Hence we have that 
+\[(c_1-c_2)(c_1+c_2) = c^{2}_1-c^{2}_2 = 0\]
+Thus, \(c_1-c_2 = 0\), since \(c_1+c_2 > 0\). Therefore \(c_1 = c_2\) and hence the solution is unique.\\
+\textbf{Disproving Existence Statements} If we were to disprove an existence statement  \(\exists x \in S, R(x)\) then we must prove that the negation is true. \[\forall x \in S, \neg R(x)\]\\
+For example, disprove that there exist integers \(a \geq 2\) and \(n \geq 1\) such that \(a^2 + 1 = 2^n\).\\
+Proof: The negation of this would be for each \(a \geq 2\) and \(n \geq 1\) such that \(a^2 + 1 \neq 2^n\). Let \(a,n \in \mathbb{Z}\). Suppose there exists \(a \geq 2\) and \(n \geq 1\) such that \(a^2 + 1 = 2^n\). Now \(n \geq 1\), so \(2^n\) is even.
+Therefore \(a^2 + 1\) is even. Therefore, \(a^2\) is odd. Thus \(a\) is odd. Therefore \(a = 2k+1\) for some \(k \in \mathbb{Z}\). Note that is \(a \geq 2, k \geq 1\). Thererfore,
+\begin{align*}
+    a^2 + 1 &= (2k+1)^2 + 1\\
+    &= (4k^2+4k+1)+1\\
+    &= 4k^2 + 4k + 2\\
+    &= 2(2k^2 + 2k + 1)
+\end{align*}
+We can recall that \(a^2 + 1 = 2^n\). Therefore \(2^n = 2(2k^2+2k+1)\). Hence \(2^{n-1} = 2k^2 + 2k + 1 = 2(k^2+k)+1\).
+Now, \(k^2+k \in \mathbb{Z}\), so \(2^{n-1}\) is odd. This can only occur when \(n = 1\). Therefore \(1 = 2^{1-1} = 2(k^2+k) + 1\). So, \(0 = 2(k^2+k)\). Therefore, \(k^2 + k = 0\). So \(- k = k^2\). This cannot be true since \(k \geq 1\).
+\section{Lecture 8: August 16, 2023}
+\textbf{Induction} This method of proof is used to prove statements that occur as open sentences \(P(n)\) over a domain that is set of positive integers.\\
+\textbf{First Principle of Mathematical Induction}: For each positive integer \(n\), let \(P(n)\) be a statement. If\\
+(1). \(P(1)\) is true and\\
+(2). the implication \(P(k) \implies P(k+1)\) is true for every integer \(k \geq 1\).\\
+then \(P(n)\) is true for every integer \(n \geq 1\).\\
+(1) is the base case and the hypothesis in (2) is called the inductive hypothesis and (2) is called the inductive step.\\
+For example, let \(n \geq 1\) and prove that 
+\[1 + 2 + ... + n = \frac{n(n+1)}{2}\]
+Proof. Over the domain of positive integers, consider the open sentence the statement 
+\[P(n): 1 + 2 + ... + n = \frac{n(n+1)}{2} \]
+We can now prove this by induction that for all \(n \geq 1\), \(P(n)\) is true. We first do the base case.\\
+\textbf{Base Case} We consider \(P(1)\)
+\[\frac{2}{2} = \frac{1(1+1)}{2} = 1\]
+Therefore \(P(1)\) is true.\\
+\textbf{Inductive Step} We assume \(P(k)\) to be true for some integer \(k \geq 1\)
+\[1 + 2 + ... + k = \frac{k(k+1)}{2}\]
+We now prove that \(P(k+1)\) is true. Note,
+\begin{align*}
+    1+2+...+(k+1)&= 1+2+...+k+(k+1)\\
+    &= \frac{k(k+1)}{2}+(k+1)\\
+    &= (k+1)(\frac{k}{2}+1)\\
+    &=\frac{(k+1)(k+2)}{2}
+\end{align*}
+Therefore \(P(k+1)\) is true. Hence by principle of mathematical induction, \(P(n)\) is true for every integer \(n \geq 1\).\\
+\textbf{Second Principle of Mathematical Induction} We fix an integer \(m\), and let \(P(n)\) be a statement for any integer \(n \geq m\). If \\
+(1). \(P(m)\) is true and\\
+(2). the implication \(P(k) \implies P(k+1)\) is true for every integer \(k \geq m\).\\
+then \(P(n)\) is true for every integer \(n \geq m\).\\
+same as the first principle, (1) is the base case, the hypothesis in (2) is called the inductive hypothesis and (2) is called the inductive step.\\
+\textbf{Strong Principle of Mathematical Induction} For each positive integer \(n\), let \(P(n)\) be a statement. If\\
+(1). \(P(1)\) is true and \\
+(2). the implication $P(1)\land P(2) \land \cdots \land P(k) \Rightarrow P(k+1)$ is true for every integer \(k \geq 1\). \\
+then \(P(n)\) is true for every integer \(n \geq 1\).\\
+Same as before, (1) is called the base case. The hypothesis in (2) is called the inductive hypothesis and (2) is called the inductive step.\\
+For example: The Fibonacci sequence is a sequence of numbers $F_1,F_2,F_3,\ldots,F_n,\ldots$ where \(F_1 = F_2 = 1\) and defined recursively as \(F_n = F_{n-1} + F_{n-2}\) for \(n \geq 3\). We want to prove that \[F_{n+2} \geq \phi^n,\quad \text{where }\phi = \frac{1+\sqrt{5}}{2},\]
+for every positive integer \(n\). \(\phi\) is sometimes called the golden ratio. This is actually giving me flashbacks to cse102.\\
+Proof: We can define for each \(n \geq 1\), the open sentence 
+\[P(n):\quad F_{n+2} \geq \phi^n\]
+We now do proof by induction that \(P(n)\) is true for all \(n \geq 1\). We use strong induction, since a term of the sequence depends on two of the previous terms of the sequence.\\
+\textbf{Base Case} We prove \(P(1)\); note
+\[F_{1+2} = F_3 = F_1 + F_2 = 2 > \frac{1+\sqrt{5}}{2} = \phi.\]
+Therefore \(P(1)\) is true.\\
+\textbf{Inductive Step} We assume \(P(\ell)\) to be true for \(\ell = 1,...k\) i.e., assume 
+\[F_{\ell+2} \geq \phi^\ell\]
+for any \(1 \leq \ell \leq k\). With this assumption we now need to prove that \(P(k+1)\) is true. First note,
+\[\phi^2 - \phi - 1 = \left(\frac{1+\sqrt{5}}{2}\right)^2 - \frac{1+\sqrt{5}}{2} - 1 = 0;\]
+therefore $\phi^2 = \phi + 1$. Hence,
+\begin{align*} F_{k+1+2} = F_{k+3} &= F_{k+1} + F_{k+2}\\[0.5em] &\geq \phi^{k-1} + \phi^k,\text{ by the inductive hypothesis}\\[0.5em] &= \phi^{k-1}(1+\phi)\\[0.5em] &= \phi^{k-1}\phi^2\\[0.5em] &= \phi^{k+1} \end{align*}
+Therefore \(P(k+1)\) is true. Hence, by the principle of mathematical induction, \(P(n)\) is true for every \(n \geq 1\).
+\section{Lecture 9: August 21, 2023}
+\textbf{Relation} A relation \(R\) from \(A\) to \(B\) is a subset of \(A \times B\). For a relation \(R \subseteq A \times B\), given any element \((a,b) \in R\), we write \(aRb\) and say that \(a\) is \(R\)-related to \(b\). If \((a,b) \notin R\), then we write that $a\not R b$ and say \(a\) is not \(R\)-related to \(b\).\\
+\textbf{Inverse of a Relation} For a given relation \(R\), we can define the inverse relation \(R^-1\) which is given as 
+\[R^{-1} = \{(b,a)\ \vert\ (a,b) \in R\}\]
+Note: If \(R\) is a relation from \(A\) to \(B\), then \(R^-1\) is a relation from \(B\) to \(A\).\\
+\textbf{Domain of R} The domain of \(R\) would be 
+\[\mathrm{dom}(R) = \{a\in A\ \vert\ (a,b) \in R\text{ for some }b\in B\}\]
+\textbf{Range of R} The range of \(R\) would be 
+\[\mathrm{range}(R) = \{b\in B\ \vert\ (a,b) \in R\text{ for some }a\in A\}\]
+For example, consider the sets 
+\(A = \{1,2,3,4,5\}\) and 
+\(B =\{u,v,w,x,y,z\}\).
+Consider the following relation from \(A\) to \(B\).
+\[R =\{(1,z),(2,v),(4,x),(4,u),(5,w),(2,x)\}\]
+\[\text{dom}(R) = \{1,2,4,5\} \subseteq A\]
+\[\text{range}(R) = \{u,z,x,v,w\} \subseteq B\]
+\[R^-1 = \{(z,1),(v,2),(x,4),(x,2),(u,4),(w,5)\} \subseteq B \times A\]
+\textbf{Properties of Relations} \(R\) is called reflexive if for every \(a \in A\) we have \(aRa\). Alternatively, define the diagonal of \(A\) as the set $\Delta_A = \{(a,a)\ \vert\ a\in A\} \subset A \times A$ then \(R\) is reflexive if and only if $\Delta_A \subseteq R$. \(R\) is called symmetric if whenever \(aRb\) i.e. \((a,b) \in R\) then \(bRa\) i.e. \((b,a) \in R\). Alternatively, \(R\) is symmetric if \(R = R^-1\). \(R\) is called transitive if whenever \(a \sim b\) and \(b \sim c\) i.e if \((a,b),(b,c) \in R\) then \(aRc\) i.e. \((a,c) \in R\).\\
+Example. Consider the following relation on \(\mathbb{Z}\), we say \(aRb\) is \(a \leq b\). Which properties would this have. For any integer \(x\) we would of course have \(x \leq x\), therefore \(xRx\) so the relation is reflexive. Suppose for integers \(a,b,c\) we have that \(a \leq b\) and \(b \leq c\). Then we have that \(a \leq c\) therefore we have that whenever \(aRb\) and \(bRC\), then \(aRc\), therefore the relation is transitive. However for symmetric if we have that \(a \leq b\) then we cant have that \(b \leq a\). So it isnt symmetric.
+
+\section{Lecture 10: August 23, 2023}
+\textbf{Equivalence Relations} There are 3 main properties of equality for a relation.\\
+(1) Reflexive For every \(a \in A\), \(a = a\)\\
+(2) Symmetric For every, \(a,b \in A\), if \(a = b\), then \(b = a\).\\
+(3) Transitive For each \(a,b,c \in A\), if \(a = b\) and \(b = c\), then \(a = c\).\\
+Example: Consider the following relation on \(\mathbb{Q}\). Say \(aRb\) if \(ab \geq 0\). Show that this is an equivalence relation.\\
+Solution: Consider any \(a \in \mathbb{Q}\). not that \(a * a = a^2 \geq 0\), hence \(aRa\) and therefore \(R\) is reflexive. Suppose now that \(a,b \in \mathbb{Q}\) are such that \(ab \geq 0\). So \(ba = ab \geq 0\) and thus \(bRa\). Therefore \(R\) is symmetric. We now need to prove that \(R\) is transitive. We consider \(a,b,c \in \mathbb{Q}\) such that \(ab \geq 0\) and \(bc \geq 0\). The former tells us that \(a\) and \(b\) have the same sign, similarly the latter tells us that \(b\) and \(c\) have the same sign. Therefore \(a\) and \(c\) have the same sign, so \(ac \geq 0\) hence \(aRc\) and therefore \(R\) is transitive.\\
+\textbf{Equivalence Class} Suppose you have an equivalence relation \(R\) given on a set \(A\), we then define an important subset of \(A\) for any \(a \in A\)
+\[[a] = \{b \in A \vert aRb\} \subseteq A\]
+This set is called the equivalence class represented by \(a\). Since an equivalence relation is reflexive, we have that \(a \in [a]\).\\
+Example. Describe \([1],[-2],[3]\) for the equivalence relation given in the previous example.\\
+Solution.
+\begin{align*} [1] &= \{x \in \mathbb{Q}\ \vert\ 1Rx\}\\[0.5em]  &= \{x \in \mathbb{Q}\ \vert\ x \geq 0\}\\[0.5em]  &= \mathbb{Q}_{\geq 0}\\[1em] [-2] &= \{x \in \mathbb{Q}\ \vert\ -2Rx\}\\[0.5em]  &= \{x \in \mathbb{Q}\ \vert\ -2x \geq 0\}\\[0.5em]  &= \{x \in \mathbb{Q}\ \vert\ x \leq 0\}\\[0.5em]  &= \mathbb{Q}_{\leq 0}\\[1em] [3] &= \{x \in \mathbb{Q}\ \vert\ 3Rx\}\\[0.5em]  &= \{x \in \mathbb{Q}\ \vert\ 3x \geq 0\}\\[0.5em]  &= \{x \in \mathbb{Q}\ \vert\ x \geq 0\}\\[0.5em]  &= \mathbb{Q}_{\leq 0} \end{align*}
+\section{Lecture 11: August 25, 2023}
+\textbf{Congruence Modulo n} Recall that we say \(a \equiv b \mod n\) iff \(n \vert a - b\) iff \(a\) and \(b\) have the same remainder when divided by \(n\). We know that \(a \equiv b \mod n\) is an equivalence relation. The equivalence classes are 
+\begin{align*}
+    [0] &= \{x \in \mathbb{Z} \vert x \equiv 0 \mod n\} = \{nk \vert k \in \mathbb{Z}\}\\
+    [1] &= \{x \in \mathbb{Z} \vert x \equiv 1 \mod n\} = \{nk + 1 \vert k \in \mathbb{Z}\}\\
+    \vdots\\
+    [n-1] &= \{x \in \mathbb{Z} \vert x \equiv (n-1) \mod n\} = \{nk + (n-1) \vert k \in \mathbb{Z}\}
+\end{align*}
+We can denote the collection of distinct equivalence classes under congruence modulo \(n\) as \(\mathbb{Z}/n\mathbb{Z}\) as \(\mathbb{Z}/n\mathbb{Z} = \{[0],[1],[2],...[n-1]\}\), the set of integers modulo \(n\) read as "\(\mathbb{Z} \mod n \mathbb{Z}\)". \(|\mathbb{Z}/n\mathbb{Z}| = n\).\\
+\textbf{Function} A function \(A\) to \(B\) is a relation with the following stipulations.\\
+- The domain of \(f\) as a relation is all of \(A\) i.e. every element of \(A\) appears as a first coordinate of elements in \(f \subseteq A \times B\).\\
+- Given an \((a,b) \in f\), then its the only element of \(f\) with the first coordinate \(a\) i.e. if you have \((a,b),(a,c) \in f\), then \(b = c\).\\
+When we put this all together we say a function \(f\) is a relation from \(A\) to \(B\) such that every element \(A\) appears and appears exactly once as a first coordinate of elements in \(f\). \\
+We write a function \(f\) from \(A\) to \(B\) as \(f: A \to B\), and for \((a,b) \in f\), we denote \(b = f(a)\), image of \(a\) under \(f\). The definition of \(f\) in this notation is\\
+- \(dom(f) = A\) and \\
+- if \(x = y\) then \(f(x) = f(y)\) (a function is then called well defined).\\
+We call \(B\) the \(codomain\) of \(f\) denoted by \(codom(f)\) so
+\[f = \{(a,f(a)\ \vert\ a \in \mathrm{dom}(f)\} \subseteq \mathrm{dom}(f) \times \mathrm{codom}(f)\]
+Recall range of a relation so for \(f\) we have that 
+\[\mathrm{range}(f) = \{b \in B\ \vert\ (a,b) \in f,\text{ for some $a \in A$}\} = \{f(a)\ \vert\  a \in A\} \subseteq B\]
+\textbf{Identity Function} An example of a function \(f: A \to A\) is given as \(f(a) = a\), for any \(a \in A\). That is 
+\[f = \{(a,a)\ \vert\ a \in A\} = \Delta_A,\]
+the diagonal of \(A\).\\
+Example: What if \(f \subseteq \mathbb{R}^2\) where \(f(x) = x^2\)\\
+Solution. Since \(f \subseteq \mathbb{R}^2\) we recognise that \(dom(f) = \mathbb{R} = codom(f)\) and we have from above that
+\[f = \{(x,f(x)\ \vert\ x\in \mathbb{R}\} = \{(x,x^2\ \vert\ x\in \mathbb{R}\} \subseteq \mathbb{R}^2\]
+\textbf{Inclusion Function} For any non-empty set \(A\), and a subset \(C\) of \(A\), the inclusion function is the function
+\[\iota: C \to A\]
+\[c \to c\]
+As a relation, this is the subset 
+\[\iota = \{(c,c) \vert c \in C\} \subseteq C \times A\].
+\textbf{Restriction Function}
+Let \(f: A \top B\) be a function, and \(C \subseteq A\). Then the relation \(fl_c = f \cap (C \times B\) is a function. This is a function 
+\[fl_c: C \to B\]
+\[c \to f(c)\]
+where \(dom(fl_c) = C\). (restricting the rule to a subset).\\
+\textbf{Image} Suppose were are given a function \(f: A \top B\) consider any subset \(C \subseteq A\), we define 
+\[f(C) = \{f(c)\ \vert\ c \in C\},\]
+and call if the image of \(C\) under \(f\). Not if \(C = A\), then \(f(A)\), by definition, is the range of \(f\).\\
+Example. Consider the function \(f \subseteq \mathbb{R}^2\) given as \(f(x) = e^x\). What is the image of \(\mathbb{Z}_{\geq 0}\) under \(f\)?\\
+Solution. By definition,
+\[f(\mathbb{Z}_{\geq 0}) = \{f(n)\ \vert\ n \in \mathbb{Z}_{\geq 0}\} = \{e^n\ \vert\ n \in \mathbb{Z}_{\geq 0}\} = \{1,e,e^2,e^3,\ldots\}\]
+\textbf{Preimage} Suppose we are given a function \(f: A \to B\), consider any subset \(D \subseteq B\), we define 
+\[f^{-1}(D) = \{a \in A\ \vert\ f(a) \in D\},\]
+and call if the preimage image of \(D\) under \(f\).\\
+Here's a special case of this, consider any \(b \in B\), then
+\[f^{-1}(b) := f^{-1}(\{b\}) = \{a \in A\ \vert\ f(a) \in \{b\}\} = \{a \in A\ \vert\ f(a) = b\}\]
+Example. Consider the function \(f: \mathbb{R} \to \mathbb{R}\) given as \(f(x) = x^2\). Compute \(f^{-1}(4)\).\\
+Solution. By definition,
+\[f^{-1}(4) = \{x \in \mathbb{R}\ \vert\ f(x) = 4\} = \{x \in \mathbb{R}\ \vert\ x^2 = 4\} = \{2,-2\}\]
+\section{Lecture 12: August 28, 2023}
+\textbf{Injective} We say a function \(f: A \to B\) is injective, if whenever \(f(a) = f(b)\), then \(a = b\). \(f\) maps distinct elements to distinct elements.\\
+Examples:\\
+(1) \(f: \mathbb{Z} \to \mathbb{Z}\) \(f(n) = 2n+1\) is injective.
+(2) \(cos: \mathbb{R} \to [-1,1], x \to cos(x)\). Not injective. \(f(0) = 1  = f(2\pi)\) but \(0 \neq 2\pi\).\\
+\textbf{Surjective} We say a function \(f: A \to B\) is surjective, if for every \(b \in B\), there exists an \(a\) such that \(b = f(a)\). Equivalently if every element in \(B\) is mapped to by some element in \(A\).\\
+Examples:\\
+(1)  \(f: \mathbb{Z} \to \mathbb{Z}\) \(f(n) = 2n+1\) not surjective. \(2 \in \mathbb{Z}\). \(2 \neq 2n+1\) for any \(n \in \mathbb{Z}\).\\
+(2) \(cos: \mathbb{R} \to [-1,1], x \to cos(x)\) is surjective.\\
+\textbf{Bijective} A function \(f\) is said to be bijective if \(f\) is both injective and surjective.\\
+Examples:\\
+(1) \(f: \mathbb{Z} \to \mathbb{Z}\) \(f(n) = 2n+1\) not bijective since its not surjective and only injective.\\
+(2) \(cos: \mathbb{R} \to [-1,1], x \to cos(x)\) not bijective since its only surjective and not injective.\\
+\textbf{Composition} We define an operation on fuction called composition. Consider the function \(f: A \to B\) and \(g: B \to C\), we construct a new function from \(A\) to \(C\) by applying \(f\) first and then \(g\), this is what composition is. Formally put, the composition, denoted \(g\circ f\), of functions \(f\) and \(g\) is given as 
+\[(g\circ f)(a) = g(f(a)),\qquad \text{for all }a \in A\]
+Example. Consider the functions \(f: \mathbb{Q} \to \mathbb{R},\)
+\[f(x) = \frac{2}{3}x+6\]
+and \(g: \mathbb{R} \to \mathbb{R}, g(x) = x^2\). What is \(g\circ f\)?\\
+Solution. We compute the rule explicitly, let \(x \in \mathbb{Q}\), then
+\begin{align*} (g\circ f)(x) &= g(f(x))\\[0.5em] &= f(x)^2 = \left(\dfrac{2}{3}\,x + 6\right)^2 \end{align*}
+This is the function \(g\circ f: \mathbb{Q} \to \mathbb{R}\).\\
+\textbf{Inverse} Given \(f: A \to B\), a function \(f^{-1}:B \to A\) would be a function is \(f^{-1}\) was well-defined and \(dom(f^-1) = B\); the former is guaranteed by injectivity of \(f\), and the latter by surjectivity of \(f\).\\
+Example. Consider the function \(f: \mathbb{Q} \to \mathbb{Q},\ f(x) = \dfrac{2}{3}\,x + 6\) Verify \(f\) is bijective and compute its inverse.\\
+Solution. We've already seen previously that \(f\) is injective. Let's show that \(f\) is surjective. Consider any \(x \in \mathbb{Q}\), then for 
+\[y = \dfrac{3}{2}(x-6) \in \mathbb{Q},\]
+note
+\[f(y) = f\left(\dfrac{3}{2}(x-6)\right) = \dfrac{2}{3}\left(\dfrac{3}{2}(x-6)\right) + 6 = x - 6 + 6 = x.\]
+Therefore \(f\) is surjective, and hence bijective. So \(f^-1\) is a function and recall that \(f\circ f^-1 = id_\mathbb{Q}\). So 
+\begin{align*} x = \mathrm{id}_{\mathbb{Q}}(x) &= (f\circ f^{-1})(x)\\[0.5em] &= f(f^{-1}(x)) = \dfrac{2}{3}\,f^{-1}(x) + 6 \end{align*}
+Solving for \(f^-1(x)\), we get 
+\[f^{-1}(x) = \dfrac{3}{2}(x-6)\]
+\section{Lecture 13: August 30, 2023}
+\textbf{Cardinality of Sets} For a finite set \(A\), the cardinality of \(A\) is equal to the number of elements in \(A\). What about for infinite sets?
+\[\mathbb{N} \subsetneq \mathbb{Z} \subsetneq \mathbb{Q} \subsetneq \mathbb{R} \subsetneq \mathbb{C}\]
+are all examples of infinite sets, but they are subsets in each other.\\
+Lemma: Let \(A,B\) be finite sets. \(|A| = |B|\) iff there exists a bijection \(f: A \to B\).\\
+Proof: Let \(A\) and \(B\) be finite sets.\\
+\(\rightarrow\): Suppose \(|A| = |B| = n\). Then we can write \(A = \{a_1,a_2,...,a_,\}\) and \(B = \{b_1,b_2,...b_n\}\). Define \(f: A \to B, a_i \to b_i, 1 \leq i \leq n, i \in \mathbb{Z}\). Then \(f\) is a bijection.\\
+\(\leftarrow\) Suppose there is a bijection \(f: A \to B\). Let \(|A| = n\). Write \(A = \{a_1,a_2,...,a_,\}\). Since \(f\) is a bijection, \(f\) is an injection. Therefore, \(f(A)= \{f(a_1),f(a_2),...,f(a_n)\}\). Now that \(f\) is surjective, so \(B = f(a) = \{f(a_1),f(a_2),...f(a_n)\}\). Therefore \(|B| = n\).\\
+\textbf{Numerically Equivalent} Let \(A\) and \(B\) be sets. \(A\) and \(B\) are said to be numerically equivalent, denoted \(|A| = |B|\) if there exists a bijection \(f: A \to B\). If \(A\) is finite with n-many elements, we write that \(|A| = n\).\\
+Theorem: Numerical equivalence is an equivalence relation among sets.\\
+\textbf{Denumerable} Let \(A\) be a set. \(A\) is said to be denumerable if \(|A| = |\mathbb{Z}|\), that is, if there exists a bijection \(f: \mathbb{N} \to A\). This means we can enumerate, label with positive integers, the elements of \(A\). So we can write \(A = \{a_1,a_2,a_3,...\}\).\\
+\textbf{Countable} Let \(A\) be a set. \(A\) is said to be countable if \(|A| < \infty\) or \(|A| = |\mathbb{Z}|\). That is, if \(A\) is finite or denumerable. Also \(A\) is said to be uncountable if \(A\) is not countable.\\
+Example: \(2\mathbb{N}\), the set of positive even integers, is denumerable.
+\[f:2\mathbb{N} \to N\]
+\[n \to \frac{n}{2}\]
+Example: \(|\mathbb{Z}| = |\mathbb{Z}|\)\\
+Proof: We will construct a bijection \(f: \mathbb{N} \to \mathbb{Z}\). Consider the function \(f: \mathbb{N} \to \mathbb{Z}\).
+\[n \to \frac{n}{2} \text{ if } n \text{ is even }\]
+or
+\[n \to \frac{1-n}{2} \text{ if } n \text{ is odd}\]
+\(\qed\)
+\end{document}

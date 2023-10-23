@@ -1,0 +1,206 @@
+\documentclass[11pt]{article}
+%------------------------
+%Packages
+\usepackage[top=0.75in, bottom=1.25in, left=1in, right=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb} %this is THE math package
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancybox}
+\usepackage{hyperref}
+\usepackage{varwidth}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+%------------------------
+%Fonts I use, uncomment if you like to use them.
+%The first is the general font, and the second a math font
+\usepackage{mathpazo}
+%\usepackage{eulervm}
+%------------------------
+%This is so that we have standard fonts for the doublestroked symbols
+%for reals, naturals etc. regardless of what font you use.
+%Don't comment
+\AtBeginDocument{
+  \DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+  \DeclareSymbolFontAlphabet{\mathbb}{AMSb}}
+
+%----------------------------------------------
+%User-defined environments
+%Commented because we're not using them in this document
+%The only uncommented ones are the Problem and Solution environment
+
+% \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{question}[2][Question]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem\!]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+%\newenvironment{sub-problem}[2][]{\begin{trivlist}
+%\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[\textbf{\textit{Solution}}]}{\end{proof}}
+%----------------------------------------------
+
+%----------------------------
+%User-defined notations
+\newcommand{\zz}{\mathbb Z}   %blackboard bold Z
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\ff}{\mathbb F}   %blackboard bold F
+\newcommand{\rr}{\mathbb R}   %blackboard bold R
+\newcommand{\nn}{\mathbb N}   %blackboard bold N
+\newcommand{\cc}{\mathbb C}   %blackboard bold C
+\newcommand{\af}{\mathbb A}   %blackboard bold A
+\newcommand{\pp}{\mathbb P}   %blackboard bold P
+\newcommand{\id}{\operatorname{id}} %for identity map
+\newcommand{\im}{\operatorname{im}} %for image of a function
+\newcommand{\dom}{\operatorname{dom}} %for domain of a function
+\newcommand{\cat}[1]{\mathscr{#1}}   %calligraphic category
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert} %for absolute value
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert} %for norm
+\newcommand{\modar}[1]{\text{ mod }{#1}} %for modular arithmetic
+\newcommand{\set}[1]{\left\{#1\right\}} %for set
+\newcommand{\setp}[2]{\left\{#1\ \middle|\ #2\right\}} %for set with a property
+\newcommand{\card}[1]{\#\,{#1}} %for cardinality of a set
+
+%Re-defined notations
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\gcd}{\operatorname{GCD}}
+\renewcommand{\Im}{\operatorname{Im}}
+%----------------------------
+
+\allowdisplaybreaks
+ 
+\begin{document}
+ 
+\title{Problem Set 5}
+\author{[Keene Ho]\\[0.5em]
+MATH 100 | Introduction to Proof and Problem Solving | Summer 2023}
+\date{} 
+\maketitle
+
+%Use \[...\] instead of $$...$$
+
+\begin{problem}{5.1}
+Let $a, b \in \zz$. Disprove the statement: \[\text{If $ab$ and $(a + b)^2$ are of opposite parity, then $a^2b^2$ and $a + ab + b$ are of opposite parity.}\]
+\end{problem}
+%----------------------------------------
+\begin{solution}\hfill %Do not delete
+We can disprove by using a counterexample. Let \(a = 1\) and and \(b = 1\).
+\[1*1 = 1 = odd\]
+\[(1+1)^2 = 4 = even\]
+So far they are of the opposite parity.
+\[1^{1}1^{1} = 1 = odd\]
+\[1+1(1)+1 = 3 = odd\]
+They aren't of the opposite parity so \(a = 1\) and \(b = 1\) is a counterexample.
+\end{solution}
+%----------------------------------------
+
+\newpage %Do not delete
+
+\begin{problem}{5.2}Following are the steps to prove the number $\sqrt{2}$ is irrational, this is a classic example of a proof by contradiction. Using these notes, write down a formal proof of this fact.
+\begin{itemize}
+\item Suppose $\sqrt{2}$ is rational, then $\sqrt{2} = q/p$ for some integers $p,q$. 
+\item One can assume that $p$ and $q$ have no common factors (that is, they are coprime).
+\item Squaring, we get $q^2 = 2p^2$. Therefore $2\mid q^2$.
+\item Argue that this gives us that $2\mid q$ (Hint: check old lecture notes).
+\item Plug a new expression for q back in
+\item Argue that we know something then about p that contradicts some assumption of p and q
+\end{itemize}
+\end{problem}
+%----------------------------------------
+\begin{solution}\hfill %Do not delete
+For the sake of contradiction, suppose \(\sqrt{2}\) is rational and can be expressed as a fraction\(\sqrt{2} = \frac{q}{p} \) where \(p\) and \(q\) are some integers. We can assume that \(p\) and \(q\) have no common factors. Squaring both sides of the equation we get 
+\[2 = (\frac{q}{p})^2 = \frac{q^2}{p^2}\]
+\[2p^2 = q^2\]
+Therefore \(2|q^2\). This implies that $2$ divides $q^2$, or in other words, $2$ is a factor of $q^2$. Since \(2\) is a prime number, the only way \(2\) can divide \(q^2\) is if \(2\) divides \(q\) itself. Then \(q\) is an even integer. We can write \(q = 2k\)  for some integer \(k\).
+\[2p^2 = (2k)^2\]
+\[2p^2 = 4k^2\]
+\[p^2 = 2k^2\]
+This implies that \(p^2\) is even, then \(p\) must also be even. We can write \(p = 2m\) for some integer \(m\). However, this contradicts our initial assumption that \(p\) and \(q\) are coprime. They can both be expressed as even integers making them not coprime. This contradiction is from assuming that \(\sqrt{2}\) is rational. Therefore, our assumption that \(\sqrt{2}\) is rational must be false. Thus \(\sqrt{2}\) is irrational.
+
+\end{solution}
+%----------------------------------------
+
+\newpage  %Do not delete
+
+\begin{problem}{5.3}\hfill
+\begin{itemize}[itemsep=3em]
+\item[(a)] Show that there exist \emph{no} non-zero real numbers $a$ and $b$ such that
+\[\sqrt{a^2 + b^2} = \sqrt[3]{a^3 + b^3}\]
+%----------------------------------------
+\begin{solution}\hfill %Do not delete
+For the sake of contradiction, lets assume there exist non-zero real numbers \(a\) and \(b\) such that \(\sqrt{a^2 + b^2} = \sqrt[3]{a^3 + b^3}\)
+\[(a^2+b^2)^\frac{1}{2} = (a^3+b^3)^\frac{1}{3}\]
+Raise it to the power of 6 to get rid of the roots.
+\[(a^2+b^2)^3 = (a^3+b^3)^2\]
+\[a^6+3a^4b^2+3a^2b^4+b^6 = a^6+2a^3b^3+b^6\]
+\[3a^4b^2+3a^2b^4 = 2a^3b^3\]
+\[3a^2+3b^2=2ab\]
+\[3(a^2+b^2)=2ab\]
+\[3(a^2+b^2)-2ab=0\]
+\[3a^2+3b^2-2ab=0\]
+\[(a-b)^2+2a^2+2b^2=0\]
+Left hand side can only be zero if \\
+(1). \(2a^2 = 0\) then \(a = 0\)\\
+(2). \(2b^2 = 0\) then \(b = 0\)\\
+(3). \((a-b)^2 = 0\) then \(a = b\)\\
+Since we assumed that \(a\) and \(b\) are non-zero this leads to a contradiction.
+Then our assumption that there exist non-zero real numbers \(a\) and \(b\) such that \(\sqrt{a^2 + b^2} = \sqrt[3]{a^3 + b^3}\) is false. Therefore, there are no non-zero real numbers \(a\) and \(b\) such that \(\sqrt{a^2 + b^2} = \sqrt[3]{a^3 + b^3}\).
+\end{solution}
+%----------------------------------------
+
+\item[(b)] Disprove the statement: \[\text{There exist \emph{odd} integers $a$ and $b$ such that $4 \mid (3a^2 + 7b^2)$.}\]
+(Hint: use a lemma we proved last week)
+%----------------------------------------
+\begin{solution}\hfill %Do not delete
+WTS: If \(a\) and \(b\) are odd integers, then \(4 \nmid (3a^2+7b^2)\). \\
+\((3a^2+7b^2) = 4l\) for some integer \(l\)\\
+Let \(a\) and \(b\) be odd integers such that \(a = 2k +1\) and \(b = 2m + 1\) for some integer \(k\) and \(m\).
+\[3a^2+7b^2=3(2k+1)^2+7(2m+1)^2\]
+\[=3(4k^2+4k+1)+7(4m^2+4m+1)\]
+\[=12k^2+12k+3+28m^2+28m+7\]
+\[=12k^2+12k+28m^2+28m+8+2\]
+\[=4(3k^2+3k+7m^2+7m+2)+2\]
+We get a remainder of \(2\) which isn't divisible by \(4\) then it follows that \(4 \nmid (3a^2+7b^2)\). Therefore the statement "There exist \emph{odd} integers $a$ and $b$ such that $4 \mid (3a^2 + 7b^2)$." is false. \\
+\end{solution}
+%----------------------------------------
+
+\end{itemize}
+\end{problem}
+
+\newpage  %Do not delete
+
+\begin{center}
+\textbf{Collaborators:}
+%List your peers with whom you discussed the Problem Set
+\end{center}
+\vfill 
+
+\begin{center}
+\textbf{References:}
+%List any book/website/notes that you used to write your solutions
+\end{center}
+\begin{itemize}
+\item[$\bullet$] [Book(s): Title, Author]
+\item[$\bullet$] [Online: \href{http://example.com/}{Link}]
+\item[$\bullet$] [Notes: \href{http://example.com/}{Link}]
+\end{itemize}
+
+\vfill
+\begin{center}
+Fin.
+\end{center}
+\vfill
+
+\end{document}

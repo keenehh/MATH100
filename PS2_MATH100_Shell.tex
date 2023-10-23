@@ -1,0 +1,319 @@
+\documentclass[11pt]{article}
+%------------------------
+%Packages
+\usepackage[top=0.75in, bottom=1.25in, left=1in, right=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb} %this is THE math package
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancybox}
+\usepackage{hyperref}
+\usepackage{varwidth}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+%------------------------
+%Fonts I use, uncomment if you like to use them.
+%The first is the general font, and the second a math font
+\usepackage{mathpazo}
+%\usepackage{eulervm}
+%------------------------
+%This is so that we have standard fonts for the doublestroked symbols
+%for reals, naturals etc. regardless of what font you use.
+%Don't comment
+\AtBeginDocument{
+  \DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+  \DeclareSymbolFontAlphabet{\mathbb}{AMSb}}
+
+%----------------------------------------------
+%User-defined environments
+%Commented because we're not using them in this document
+%The only uncommented ones are the Problem and Solution environment
+
+% \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{question}[2][Question]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem\!]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+%\newenvironment{sub-problem}[2][]{\begin{trivlist}
+%\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[\textbf{\textit{Solution}}]}{\end{proof}}
+%----------------------------------------------
+
+%----------------------------
+%User-defined notations
+\newcommand{\zz}{\mathbb Z}   %blackboard bold Z
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\ff}{\mathbb F}   %blackboard bold F
+\newcommand{\rr}{\mathbb R}   %blackboard bold R
+\newcommand{\nn}{\mathbb N}   %blackboard bold N
+\newcommand{\cc}{\mathbb C}   %blackboard bold C
+\newcommand{\af}{\mathbb A}   %blackboard bold A
+\newcommand{\pp}{\mathbb P}   %blackboard bold P
+\newcommand{\id}{\operatorname{id}} %for identity map
+\newcommand{\im}{\operatorname{im}} %for image of a function
+\newcommand{\dom}{\operatorname{dom}} %for domain of a function
+\newcommand{\cat}[1]{\mathscr{#1}}   %calligraphic category
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert} %for absolute value
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert} %for norm
+\newcommand{\modar}[1]{\text{ mod }{#1}} %for modular arithmetic
+\newcommand{\set}[1]{\left\{#1\right\}} %for set
+\newcommand{\setp}[2]{\left\{#1\ \middle|\ #2\right\}} %for set with a property
+\newcommand{\card}[1]{\#\,{#1}} %for cardinality of a set
+
+%Re-defined notations
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\gcd}{\operatorname{GCD}}
+\renewcommand{\Im}{\operatorname{Im}}
+%----------------------------
+
+\allowdisplaybreaks
+ 
+\begin{document}
+ 
+\title{Problem Set 2}
+\author{[Keene Ho]\\[0.5em]
+MATH 100 | Introduction to Proof and Problem Solving | Summer 2023}
+\date{} 
+\maketitle
+
+%Use \[...\] instead of $$...$$
+
+\begin{problem}{2.1}
+For the sets $A = \set{1, 2,\ldots,10}$ and $B = \set{2, 4, 6, 9, 12, 25}$, consider the statements
+\[P: A \subseteq B. \quad \text{and} \quad Q: \abs{A \setminus B} = 6.\]
+Determine which of the following statements are true, with justification.
+\begin{itemize}[itemsep=3em]
+\item[(a)] $P \lor Q$
+%----------------------------------------
+\begin{solution}
+\(P\) is saying that \(A\) is a subset \(B\). This is false as every element of set \(A\) is not in set \(B\). \(A \setminus B = {1, 3, 5, 7, 8, 10}\). \(Q\) is true as the cardinality is \(6\). \(P \lor Q\) is True because one of the statements is true.
+\end{solution}
+%----------------------------------------
+
+\item[(b)] $P \lor \neg Q$
+%----------------------------------------
+\begin{solution}
+In this case \(\neg Q\) is now not True while \(P\) is still false. \(P \lor \neg Q\) is false as both statements are false.
+\end{solution}
+%----------------------------------------
+
+\item[(c)] $P \land Q$
+%----------------------------------------
+\begin{solution}
+\(P \land Q\) is false as both statements would need to be true. \(P\) is false and \(Q\) is true.
+\end{solution}
+%----------------------------------------
+
+\item[(d)] $\neg P \land \neg Q$
+%----------------------------------------
+\begin{solution}
+\( \neg P\) is now not false and \( \neg Q\) is now not true. \(\neg P \land \neg Q\) is false as both statements would need to be true.
+\end{solution}
+%----------------------------------------
+
+\item[(e)] $\neg P \lor \neg Q$
+%----------------------------------------
+\begin{solution}
+\(\neg P\) is now not false and \( \neg Q\) is now not true. \(\neg P \lor \neg Q\) is true because one of the statements is true (not false).
+\end{solution}
+%----------------------------------------
+
+\end{itemize}
+\end{problem}
+
+\newpage %Do not delete
+
+\begin{problem}{2.2}
+Consider the open sentences:
+\[P(x,y) : x+y = -2. \quad \text{and} \quad Q(x,y) : x^2 + y^2 = 4.\]
+where the domain of both $x$ and $y$ is $S = \set{-2, 0, 2}$.\\[0.5em]
+State each of the following in words and determine all values of $x,y \in S$ for which the resulting statements are true, with justification.
+\begin{itemize}[itemsep=3em]
+\item[(a)] $\neg P(x,y)$
+%----------------------------------------
+\begin{solution}
+The values of \(x,y \in S\) for which \(P(x, y)\) is not false \(x + y \not= 2\): \(\set{(-2, 2), (2,-2), (0, 2), (2,0)}\). \(-2 + 2 \not= -2\),\(2 + -2 \not= -2\),\(0 + 2 \not= -2\), and \(2 + 0 \not= -2\).
+\end{solution}
+%----------------------------------------
+
+\item[(b)] $P(x,y) \lor Q(x,y)$
+%----------------------------------------
+\begin{solution}
+The values of \(x,y \in S\) for which \(P(x, y)\) is true: \(\set{(-2, 0), (0, -2)}\). \(-2 + 0 = -2\) and \(0 + -2 = -2\)
+The values of \(x,y \in S\) for which \(Q(x, y)\) is true: \(\set{(-2, 0), (0, -2), (2, 0), (0,2))}\). Since only one of the values are needed to be true for or \(P(x,y) \lor Q(x,y) = \set{(-2,0),(0,-2),(2,0),(0,2)}\). For example \(P(2,0) \lor Q(2,0)\). \(P\) would be false and \(Q\) would be true. With the logical \(\lor\) this would make it true as only one of the statements needed are true.
+\end{solution}
+%----------------------------------------
+
+\item[(c)] $P(x,y) \land Q(x,y)$
+%----------------------------------------
+\begin{solution}
+Using the same \(x,y\) values as before we only need the ones that give both statements true and true. \(P(-2,0) \land P(-2,0)\) is true as both values are true. \(P(0,-2) \land P(0,-2)\) is true as both values are true. \(P(0,2) \land Q(0,2)\) is false since \(P\) is false and both statements are needed to be true. \(P(2,0) \land Q(2,0)\) is false since \(P\) is false and both statements are needed to be true. \(P(x,y) \land Q(x,y) = \set{(-2,0),(0,-2)}\)
+\end{solution}
+%----------------------------------------
+
+\item[(d)] $P(x,y) \implies Q(x,y)$
+%----------------------------------------
+\begin{solution}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$P$ & $Q$ & $P \implies Q$ \\
+\hline
+T & T & T \\
+T & F & F \\
+F & T & T \\
+F & F & T \\
+\hline
+\end{tabular}
+\end{center}
+\(P(-2,0) \implies Q(-2,0)\). This is true as the premise/hypothesis is true and so is the conclusion. \\
+\(P(0,-2) \implies Q(0,-2)\). This is true as both statements are true. \\
+\(P(2,0) \implies Q(2,0)\). In this case \(P\) is false and \(Q\) is true. \(P(2,0) \implies Q(2,0)\) is true. \\
+\(P(0,2) \implies Q(0,2)\). In this case \(P\) is false and \(Q\) is true. \(P(0,2) \implies Q(0,2)\) is true. \\
+So the values of \(x,y \in S\) for which \(P(x,y) \implies Q(x,y)\) is true are \(\set{(-2,0),(0,-2),(2,0),(0,2)}\)
+\end{solution}
+%----------------------------------------
+
+\item[(e)] $Q(x,y) \implies P(x,y)$
+%----------------------------------------
+\begin{solution}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$Q$ & $P$ & $Q \implies P$ \\
+\hline
+T & T & T \\
+T & F & F \\
+F & T & T \\
+F & F & T \\
+\hline
+\end{tabular}
+\end{center}
+\(Q(-2,0) \implies P(-2,0)\) is true as both statements are true. \\
+\(Q(0,-2) \implies P(0,-2)\) is true as both statements are true. \\
+\(Q(2,0) \implies P(2,0)\). In this case \(P\) is false and \(Q\) is true. So this whole thing is false because the premise is true but we get a false conclusion. \\
+\(Q(0,2) \implies P(0,2)\). Same as the case before. \(P\) is false and \(Q\) is true so this makes the whole thing false. \\
+So the values of \(x,y \in S\) for which \(Q(x,y) \implies P(x,y)\) is true are \(\set{(-2,0),(0,-2)}\)
+\end{solution}
+%----------------------------------------
+
+\item[(f)] $P(x,y) \iff Q(x,y)$
+%----------------------------------------
+\begin{solution}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$P$ & $Q$ & $P \iff Q$ \\
+\hline
+T & T & T \\
+T & F & F \\
+F & T & F \\
+F & F & T \\
+\hline
+\end{tabular}
+\end{center}
+\end{solution}
+\(P(-2,0) \iff Q(-2,0)\). This is true as both values are true. \\
+\(P(0,-2) \iff Q(0,-2)\). This is true as both values are true. \\
+\(P(2,0) \iff Q(2,0)\). This is false. \(P(2,0)\) is false and \(Q(2,0)\) is true. So \(P(2,0) \iff Q(2,0)\) is false. \\ 
+\(P(0,2) \iff Q(0,2)\). This is false. \(P(0,2)\) is false and \(Q(0,2)\) is true. So \(P(0,2) \iff Q(0,2)\) is false. \\ 
+So the values of \(x,y \in S\) for which \(P(x,y) \iff Q(x,y)\) is true are \(\set{(-2,0),(0,-2)}\)
+%----------------------------------------
+\end{itemize}
+\end{problem}
+
+\newpage  %Do not delete
+
+\begin{problem}{2.3}\hfill
+\begin{itemize}[itemsep=3em]
+\item[(a)] For statements $P,\, Q$ and $R$, show that \[((P \lor Q) \Rightarrow R) \equiv (P \Rightarrow R) \land (Q \Rightarrow R)\]
+%----------------------------------------
+\begin{solution}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$P$ & $Q$ & $R$ & $P \lor Q$ & $(P \lor Q) \Rightarrow R$ & $P \Rightarrow R$ & $Q \Rightarrow R$ & $(P \Rightarrow R) \land (Q \Rightarrow R)$ \\
+\hline
+T & T & T & T & T & T & T & T \\
+T & T & F & T & F & F & F & F \\
+T & F & T & T & T & T & T & T \\
+T & F & F & T & F & F & T & F \\
+F & T & T & T & T & T & T & T \\
+F & T & F & T & F & T & F & F \\
+F & F & T & F & T & T & T & T \\
+F & F & F & F & T & T & T & T \\
+\hline
+\end{tabular}
+\end{center}
+\end{solution}
+%----------------------------------------
+
+\item[(b)] For statements $P$ and $Q$, the implication $\neg P \implies \neg Q$ is called the \emph{inverse} of the implication $P \implies Q$ which it is \emph{not} equivalent to. Find another implication that is logically equivalent to $\neg P \implies \neg Q$ and verify your answer.
+%----------------------------------------
+\begin{solution}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$P$ & $Q$ & $\lnot P$ & $\lnot Q$ & $\lnot P \implies \lnot Q$ \\
+\hline
+T & T & F & F & T \\
+T & F & F & T & T \\
+F & T & T & F & F \\
+F & F & T & T & T \\
+\hline
+\end{tabular}
+\end{solution}
+We can try reverse the order of the implication then negate. \\
+\(\lnot Q \implies \lnot P\).
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$Q$ & $P$ & $\lnot Q$ & $\lnot P$ & $\lnot Q \implies \lnot P$ \\
+\hline
+T & T & F & F & T \\
+T & F & F & T & T \\
+F & T & T & F & F \\
+F & F & T & T & T \\
+\hline
+\end{tabular}
+We can see from both truth tables that they are logically equivalent.
+%----------------------------------------
+\end{itemize}
+\end{problem}
+
+\newpage  %Do not delete
+
+\begin{center}
+\textbf{Collaborators:}
+%List your peers with whom you discussed the Problem Set
+\end{center}
+\vfill 
+
+\begin{center}
+\textbf{References:}
+%List any book/website/notes that you used to write your solutions
+\end{center}
+\begin{itemize}
+\item[$\bullet$] [Book(s): Title, Author]
+\item[$\bullet$] [Online: \href{https://people.engr.tamu.edu/hlee42/csce222/truth-table.pdf}{Latex Truth Table}]
+\item[$\bullet$] [Notes: Was mostly looking at the modules/truth tables]
+\end{itemize}
+
+\vfill
+\begin{center}
+Fin.
+\end{center}
+\vfill
+
+\end{document}

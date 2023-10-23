@@ -1,0 +1,317 @@
+\documentclass[answers,12pt]{exam}
+\usepackage{amsmath}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+\usepackage{amssymb}
+\usepackage{braket}
+\usepackage[mathscr]{euscript}
+\usepackage{mathabx}
+\usepackage{MnSymbol,wasysym}
+\usepackage[margin=1.001in]{geometry}
+\usepackage{graphicx}
+\usepackage{tensor}
+\usepackage{bbm}
+\usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{relsize}
+
+\newcommand{\br}{\hfill \break}
+\newcommand{\bpm}{\begin{pmatrix}}
+\newcommand{\epm}{\end{pmatrix}}
+\newcommand{\bv}{\textbf{v}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\spn}{\text{span}}
+\newcommand{\iso}{\text{Iso}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\defn}{\textbf{Definition: }}
+\newcommand{\thm}{\textbf{Theorem: }}
+\newcommand{\leftf}{\left \lfloor}
+\newcommand{\rightf}{\right \rfloor}
+\newcommand{\qedb}{\square}
+\newcommand{\eps}{\epsilon}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+\newcommand\ceil[1]{\lceil#1\rceil}
+\newcommand{\del}{\nabla}
+\newcommand{\delf}{\nabla f}
+\newcommand{\bh}{\textbf{h}}
+\newcommand{\ba}{\textbf{a}}
+\newcommand{\bx}{\textbf{x}}
+\newcommand{\hn}{||\bh||}
+\newcommand{\p}{\partial}
+\newcommand{\vp}{\varphi}
+\newcommand{\var}{\text{var}}
+\newcommand{\xsum}{X_1+\ldots+X_n}
+\newcommand{\td}{\dot{t}}
+\newcommand{\xd}{\dot{x}}
+\newcommand{\yd}{\dot{y}}
+\newcommand{\zd}{\dot{z}}
+\newcommand{\bs}{\begin{solution}}
+\newcommand{\es}{\end{solution}}
+\newcommand{\fl}{\mathcal{L}}
+\newcommand{\sff}{\textit{II}}
+\newcommand{\ol}{\overline}
+
+
+\begin{document}
+\br
+\textbf{Proof Portfolio}
+\br
+Keene Ho: - Math 100 - Summer 2023
+\br\br
+\textbf{Here are the problems for Direct Proof: Choose two out of three of these} %delete fromm your code the one that you do not choose to solve
+\begin{enumerate}
+    \item [(2)] Show that \(a \equiv b \) mod 10 if and only if \(a \equiv b \) mod 2 and \(a \equiv b \) mod 5 (Hint: for one direction you will have to use something from question 1)
+    \bs
+    %if you are going to solve this one, write your answer here. If not delete this box and the code above.
+    A: \(a \equiv b \mod 10\)\\
+    B: \(a \equiv b \mod 2\) and \(a \equiv b \mod 5\)\\
+    \(A \implies B\)\\
+    Let \(a\) and \(b\) be integers such that \(a \equiv b\mod 10\). By definition this also means that \(10 | a - b\) then \(a - b = 10k\) for some integer \(k\). Since \(10\) is divisible by \(2\), it follows that \(a - b = 10k\) is also divisible by \(2\).
+    \[a - b = 10k\]
+    \[a - b = 2(5k)\]
+    Since \(5k\) is just an integer, then \(2 | a - b\) so \(a \equiv b \mod 2\). Since \(10\) is also divisible by \(5\), it follows that \(a - b = 10k\) is also divisible by \(5\).
+    \[a - b = 10k\]
+    \[a - b = 5(2k)\]
+    Since \(2k\) is just an integer, then \(5 | a - b\) so \(a \equiv b \mod 5\).\\
+    \(B \implies A\)
+    Let \(a\) and \(b\) be integers such that \(a \equiv b \mod 2\) and \(a \equiv b \mod 5\). By definition \(a - b = 2m\) and \(a - b = 5l\) for some integer \(m\) and \(l\). \(a\) and \(b\) will have the same remainder when divided by both \(2\) and \(5\). Thus, \(2m = 5l\). On the left hand side we can see that its going to be an even integer by the definition of an even integer. So that means the right hand side must also be even. Since \(5\) is an odd number, for their product to be even, \(l\) must also be even. \(l\) can be expressed as \(l = 2z\) for some integer z. Therefore,
+    \[a - b = 5l\]
+    \[a - b = 5(2z)\]
+    \[a - b = 10z\]
+    \[a \equiv b \mod 10\]
+    \es
+    
+    
+    \item [(3)] Let \(a, b \in \Z\). Using only the definition of congruence, prove that if \(a \equiv b \) mod \(n\), then \(a^3 \equiv b^3 \) mod \(n\). 
+    \bs
+    Let \(a\) and \(b\) be integers such that \(a \equiv b \mod n\). Then by definition, \(n | (a - b)\) then \(a - b = nk\) for some integer \(k\). Note that:
+    \[a^3-b^3 = (a-b)(a^2+ab+b^2)\]
+    We can then substitute this into \(a - b = nk\). We can multiply both sides by \(a^2+ab+b^2\).
+    \[(a-b)(a^2+ab+b^2) = nk(a^2+ab+b^2)\]
+    \[a^3-b^3=nk(a^2+ab+b^2)\]
+    \[a^3-b^3=n(k(a^2+ab+b^2))\]
+    Since \(k\) and \(a^2+ab+b^2\) are both integers, and the product of both are also just integers then we can denote it as \(m\) for some integer.
+    \[a^3-b^3 = nm\]
+    This implies that \(n\) divides \(a^3-b^3\), therefore \(a^3 \equiv b^3 \mod n\).
+    \es
+\end{enumerate}
+
+\br
+\textbf{Here are the problems for Contrapositive: Choose two out of three of these}
+\begin{enumerate}
+    \item [(1)] Let \(a.b \in \Z\). Show that if \(a^2 + b^2 = c^2 \) for some \(c \in \Z\) then \(3 \mid ab\)
+    \bs\\
+    Statement: If \(a^2+b^2 = c^2\) for some \(c \in \mathbb{Z}\) then \(3 |ab\)\\
+    Contrapositive of the statement: If \(3 \nmid ab\) then \(a^2+b^2 \neq c^2\) for any \(c \in \mathbb{Z}\)
+    Lets assume that \(ab\) is not divisble by 3. Then both \(a\) and \(b\) are also not divisible by \(3\). Then the only possible remainders of \(a\) and \(b\) when not divisible by \(3\) is:
+    \[a \equiv 1 \mod 3\]
+    \[a \equiv 2 \mod 3\]
+    \[b \equiv 2 \mod 3\]
+    \[b \equiv 1 \mod 3\]
+    Then we want to consider the squares of these numbers.
+    \[a^2 \equiv 1^2 \equiv 1 \mod 3\]
+    \[a^2 \equiv 2^2 \equiv 4 \equiv 1 \mod 3\]
+    \[b^2 \equiv 1^2 \equiv 1 \mod 3\]
+    \[b^2 \equiv 2^2 \equiv 4 \equiv 1 \mod 3\]
+    We can see that \(a^2\) and \(b^2\) are congruent to \(1 \mod 3\). Then when we consider the sum of \(a^2 + b^2\) we get:
+    \[a^2 + b^2 = 1 + 1 = 2 \mod 3\]
+    This implies that \(a^2+b^2\) leaves a remainder of \(2\) when divided by \(3\). Since \(ab\) and \(a^2+b^2\) is also not divisible by \(3\) it follows that \(a^2+b^2 \neq c^2\) for any integer \(c\) since it cannot be congruent to \(c^2\) modulo 3. Therefore by proving the contrapositive, the original statement "if \(a^2 + b^2 = c^2 \) for some \(c \in \Z\) then \(3 \mid ab\)" is true.
+    \es
+    \item [(3)] Suppose \(m,n,t \in \Z\). Prove the following: \begin{enumerate}
+        \item [(a)] If \(m^2(n^2+5)\) is even, then \(m\) is even or \(n\) is odd
+        \item [(b)] If \((m^2+4)(n^2-2mn)\) is odd, then \(m\) and \(n\) are odd
+        \item [(c)] If \(m \nmid nt\) then \(m \nmid n \) and \(m \nmid t\)
+    \end{enumerate}
+    \bs
+    %if you are going to solve this one, write your answer here. If not delete this box and the code above. If you choose this problem make sure you indidicate when you are solving part a, and when you are solving part b, and when you are solving part c
+        \textbf{(a)}. The contrapositive of this statement would be "If \(m\) is odd and \(n\) is even then \(m^2(n^2+5)\) is odd. Lets assume that \(m\) is odd and \(n\) is even. Then both can be rewritten as \(m = 2k + 1\) and \(n = 2m\) for some integer \(k,m\).
+\begin{align*}
+m^2(n^2+5) &= (2k+1)^2(4m^2+5) \\
+&= 4k^2 + 4k + 1(4m^2+5) \\
+&= 4(k^2 + k) + 4m^2 + 5 \\
+&= 2(2(k^2 + k) + 2m^2 + 2) + 1.
+\end{align*}
+\(2(k^2+k)+2m^2+2\) are just all integers, so by the definition of an odd integer we have shown that \(m^2(n^2+5)\) is odd. So by proving the contrapositive, the original statement "If \(m^2(n^2+5)\) is even, then \(m\) is even or \(n\) is odd" is true.\\
+\break
+\break
+\break
+\textbf{(b)}. The contrapositive of this statement would be "If \(m\) or \(n\) is odd then \((m^2+4)(n^2-2mn)\) is even. Lets assume that \(m\) is even or \(n\) is even. We will then have two cases:\\
+Case 1: \(m\) is even \\
+We can write \(m\) as \(m = 2k\) for some integer \(k\). Then we can substitute it in.
+\begin{align*}
+(m^2+4)(n^2-2mn) &= (4k^2+4)(n^2-4kn)\\
+&= 2(2k^2+2)(n^2-4kn)
+\end{align*}
+\((2k^2+2)(n^2-4kn)\) are all just integers, so by definition of an even integer we have shown that \((m^2+4)(n^2-2mn)\) is even.
+\\
+Case 2: \(n\) is even.\\
+We can write \(n\) as \(n = 2l\) for some integer \(l\) by definition of even integer.  Then we can substitute it in.
+\begin{align*}
+(m^2+4)(n^2-2mn) &= (m^2+4)(4l^2-4lm) \\
+&= 2(m^2+1)(2l^2-2lm),
+\end{align*}
+\((m^2+1)(l^2-lm)\) are all just integers, so by definition of an even integer we have shown that \((m^2+4)(n^2-2mn)\) is even. (You can also take out \(4\) because every multiple of \(4\) is also even.)\\
+In both cases we have shown that \((m^2+4)(n^2-2mn)\) is even if \(m\) is even or \(n\) is even. Therefore by proving the contrapositive, the statement "If \((m^2+4)(n^2-2mn)\) is odd, then \(m\) and \(n\) are odd" is true. 
+\\
+\\
+\textbf{(c)}. The contrapositive of the original statement would be "If \(m\) divides either \(n\) or \(t\), then \(m\) divides \(nt\)"\\
+Case 1: \(m\) divides \(n\)
+In this case, there exists an integer \(k\) such that \(n = mk\). Then we can multiply both sides by \(t\) to get:
+\[nt = mkt\]
+\(kt\) are just integers so we have shown that \(m\) divides \(nt\).\\
+Case 2: \(m\) divides \(t\)
+In this case, there exists an integer \(l\) such that \(t = ml\). Then we can multiply both sides by \(n\) to get:
+\[nt = mlt\]
+\(lt\) are just integers so we have shown that \(m\) divides \(nt\).
+In both cases, we have shown that if \(m\) divides either \(n\) or \(t\), then \(m\) divides \(nt\). This proves the contrapositive so the original statement is true.
+    \es
+\end{enumerate}
+
+\br
+\textbf{Here are the problems for Contradiction: Choose two out of three of these}
+\begin{enumerate}    
+    \item [(2)] Let \(A, B\) be finite sets. Prove that if \(A \subseteq B\) then \(|A| \le |B|\)
+    \bs
+    %if you are going to solve this one, write your answer here. If not delete this box and the code above.
+    For the sake of contradiction, lets assume that \(A \subseteq B\) but \(|A| > |B|\). Since \(A \subseteq B\) then every element of \(A\) is also an element of set \(B\). Let \(n = |A|\) and \(m = |B|\). By our assumption we have that \(n > m\), so there must be at least \(n - m \) elements in \(A\) that aren't in \(B\). However this contradicts the fact that \(A \subseteq B\), because if every element of \(A\) is in \(B\) then there should be no elements left in \(A\). Therefore, our initial assumption that  \(A \subseteq B\) and \(|A| > |B|\) is false. So by proof by contradiction that if \(A \subseteq B\) then \(|A| \le |B|\).
+    \es
+    \item [(3)] Show that if \(a, b \in \Z\) then \(a^2 - 4b - 2 \ne 0\)
+    \bs
+    %if you are going to solve this one, write your answer here. If not delete this box and the code above.
+    For the sake of contradiction, lets assume that \(a^2-4b-2 = 0\) for some integers \(a\) and \(b\). We can then rearrange equation around.
+    \[a^2-4b-2=0\]
+    \[a^2=4b+2\]
+    \[a^2=2(2b+1)\]
+    This implies that \(a^2\) is an even number since it is equal to \(2\) times some integer. If \(a^2\) is even, then \(a\) must also be even. We can then express \(a = 2k\) for some integer \(k\).
+    \[4k^2 = 2(2b+1)\]
+    Then we can divide both sides by \(2\) to get rid of it on the right hand side.
+    \[2k^2 = 2b+1\]
+    We know on the left hand side it is even because \(2\) times an integer \(k^2\) is going to be an even integer. However \(2b+1\) is an odd number by the definition of an odd integer. This presents a contradiction because we assumed that \(a^2-4b-2 = 0\) but this is impossible. So our initial assumption that \(a^2-4b-2=0\) is false. Therefore by proof of contradiction, if \(a,b \in \mathbb{Z}\), then \(a^2-4b-2 \neq 0\).
+    \es
+\end{enumerate}
+
+\br
+\textbf{Here are the problems for Induction: Choose two out of three of these}
+\begin{enumerate}
+    \item [(1)] Prove that every \(n \in \N\) has a unique prime decomposition \(n = p_1 p_2 \dots p_k\) for prime's \(p_i\). That is, show there exists such a prime factorization as above, and moreover show that if we also have \(n=q_1q_2 \dots q_l\) then \(k=l\) and \(p_i=q_j\) for some \(i, j\) (ie, show that the primes are all the same up to some reordering of the multiplication: For example \(12 =2 \times2 \times 3 = 3 \times 2 \times 2 = 2 \times 3 \times 2\)).
+    \bs\\
+    \textbf{Base Case}: \(n = 2\)\\
+    For \(n = 2\), \(2\) is already a prime number and its only prime factorization is \(2 = 2\). This is unique, as there are no other prime factors.\\
+    \textbf{Inductive Hypothesis}:\\
+    We can assume for some positive integer \(k\), any positive integer \(n\) with \(2 \leq n \leq k\) can be written as a product of prime numbers in a unique way. It will have some unique prime factorization.\\
+    \textbf{Inductive Step}:\\
+    We would want to prove this for \(n = k+1\).\\
+    If \(k+1\) is already prime then we are done because \(k+1\) is its own prime factorization.\\
+    If \(k+1\) is not prime, then \(k + 1 = a * b\) for some positive integers \(a\) and \(b\) where \(1 < a,b < k + 1\). \(a\) and \(b\) will have unique prime factorizations by the inductive hypothesis. \(k+1\) can be expressed as the combination of the prime factorizations of \(a\) and \(b\). The prime factorization \(k+1\) will be unique because \(a\) and \(b\) are unique. Therefore, for any positive integer \(n\), there exists a unique prime factorization.
+    \es
+    \item [(3)] Let \(X\) be a finite set with cardinality \( |X| = n\). Show that \(|\mathcal{P}(X)| = 2^n\). \\
+    (Hint: count the number of subsets in two cases: \begin{enumerate}
+        \item [(1)] when an element \(x_n\) is an element of a given subset
+        \item [(2)] when an element \(x_n\) is not an element of the given subset )
+    \end{enumerate} 
+    \bs
+    \textbf{Base Case}: \(n = 0\)\\
+    When \(n\) is equal to \(0\), then \(X\) is the empty set, and there is only one subset of the empty set, which is the empty set itself. So \(|\mathcal{P}(X)| = 2^0 = 1\).\\
+    \textbf{Inductive Hypothesis}:\\
+    We can assume that for some positive integer \(k\), if \( |X| = k\), then \(|\mathcal{P}(X)| = 2^k\)
+    \textbf{Inductive Step}:\\
+    We would want to prove this for \(|X| = k+1\). We can consider a set \(X\) with \(|X| = k + 1\). Let \(x\) be an arbitrary element of \(X\). Then we have two cases:\\
+    Case 1: \(x\) is not in a given subset of \(X\). In this case, the number of subsets of \(X\) containing \(x\) is equal to the number of subsets of the remaining elements \(k\) elements of \(X\), which is \(2^k\) by our induction hypothesis.\\
+    Case 2: \(x\) is in a given subset of \(X\). In order to form a subset of \(X\) containing the arbitrary element \(x\) we need to choose a subset of the remaining \(k\) elements of \(X\). This would be done in \(2^k\) ways. So the total number of subsets would be the possibilities from the first case and the second case.
+    \[|\mathcal{P}(X)| = 2^k + 2^k = 2^{k+1}\]
+    Thus we have shown that if \(|X| = k+1\), then \(|\mathcal{P}(X)| = 2^{k+1}\), completing the proof by induction so \(|\mathcal{P}(X)| = 2^n\).
+    \es
+\end{enumerate}
+
+\br
+\textbf{Here are the problems for Set Proofs: Choose two out of three of these}
+\begin{enumerate}
+    \item [(1)] If \(A,B, C\) are sets: Prove that \begin{enumerate}
+        \item [(a)] \((A \cap B)^c = A^c \cup B^c\)
+        \item [(b)] \(A - (B \cap C)= (A-B) \cup (A-C)\)
+    \end{enumerate}
+    \bs
+    (a). Let \(x\) be an arbitrary element in \((A \cap B)^c\). \[x \notin (A \cap B)\] This would mean that \(x\) is not in \(A \cap B\). This would imply that \(x\) is not in \(A\) or \(x\) is not in \(B\) or both. \[x \notin A\] or \[x \notin B\] So \(x\) is in \(A^c\) or \(x\) is in \(B^c\) or both, which would mean \(A^c \cup B^c\).\\
+    (b). We can show that the LHS is equivalent to the RHS using set laws. LHS = RHS\\
+    \[A - (B \cap C)\]
+    Set Difference \(X \setminus Y = X \cap Y^c\)
+    \[A \cap (B \cap C)^c\]
+    De Morgan's Law
+    \[A \cap (B^c \cup C^c)\]
+    Distributive Law
+    \[(A \cap B^c) \cup (A \cap C^c)\]
+    Set Difference
+    \[(A - B) \cup (A - C)\]
+    So we have proven that the left hand side is equal to the right hand side using set laws.
+    \es
+    \item [(3)] Let A and B be sets. Prove or disprove the following: \begin{enumerate}
+        \item [(a)] \(\mathcal{P}(A) \cap \mathcal{P}(B) = \mathcal{P}(A \cap B)\)
+        \item [(b)]\(\mathcal{P}(A) \cup \mathcal{P}(B) = \mathcal{P}(A \cup B)\)
+    \end{enumerate}
+    \bs
+    %if you are going to solve this one, write your answer here. If not delete this box and the code above. If you choose this problem make sure you indidicate when you are solving part a, and when you are solving part b.
+    (a). Let \(A = \set{1}\) and \(B = \set{2}\). \(A \cap B = \set{\emptyset}\). \(\mathcal{P}(A) = \set{{\emptyset},{1}}\).  \(\mathcal{P}(B) = \set{{\emptyset},{2}}\). \(\mathcal{P}(A) \cap \mathcal{P}(B) = \set{\emptyset}\) and \(\mathcal{P}(A \cap B) = \set{\emptyset}\). As we can see they are equivalent.\\
+    (b). Let $A = \{0, 1\}$ and $B = \{1, 2\}$
+    \begin{align*}
+\quad & \mathcal{P}(A) = \{\emptyset, \{0\}, \{1\}, \{0, 1\}\} \\
+ \quad & \mathcal{P}(B) = \{\emptyset, \{1\}, \{2\}, \{1, 2\}\} \\
+  \quad & A \cup B = \{0, 1\} \cup \{1, 2\} = \{0, 1, 2\} \\
+\quad & \mathcal{P}(A \cup B) = \{\emptyset, \{0\}, \{1\}, \{2\}, \{0, 1\}, \{0, 2\}, \{1, 2\}, \{0, 1, 2\}\} \\
+\quad & \mathcal{P}(A) \cup \mathcal{P}(B) = \{\emptyset, \{0\}, \{1\}, \{2\}, \{0, 1\}, \{1, 2\}\}
+\end{align*}
+As we can see these two sets are not equal disproving it.
+    \es
+\end{enumerate}
+
+\br\textbf{Here are the problems for Functions/Relations: Choose two out of three of these}
+\begin{enumerate}
+    \item [(1)] Define a function \(f: \mathcal{P}(\Z) \to \mathcal{P}(\Z)\) that sends a subset \(X \subseteq \Z\) to its compliment \(X^ c\). Prove or disprove that this function is a bijection. If it is a bijection, find its inverse; if it is not, explain why.
+    \bs
+    %if you are going to solve this one, write your answer here. If not delete this box and the code above.
+    To determine if \(f\) is a bijection, then we need to check if its injective and surjective. \\
+    Injective: We can consider two distinct subsets \(A\) and \(B\) in \(\mathcal{P}(\Z)\) such that \(A \neq B\). Since \(A\) and \(B\) are distinct subsets, then there exists one element in \(A\) that is not in \(B\) or vise verse. WLOG we can assume there is an element \(x\) that is in \(A\) but not in \(B\). Then \(x\) is in \(A^c\) but not in \(B^c\). So this means that \(f(A^c) \neq f(B^c)\). Therefore it is injective.\\
+    Surjective: We can consider any subset \(Y\) in \(\mathcal{P}(\Z)\). We would then need to find a subset \(X\) in \(\mathcal{P}(\Z)\) such that \(f(X) = Y\). We can then define that \(X = Y^C\). Since \(Y\) is a subset of \(\Z\), then by definition, \(f(X) = X^c = (Y^{c})^{c} = Y\). So \(f\) is surjective.\\
+    So \(f\) is a bijection. To get the inverse we want to see what \(f^{-1}(Y)\) would be for any \(Y\) in \(\mathcal{P}(Z)\). The inverse function \(f^{-1}\) would sent a set \(Y\) to its complement \(Y\). So the inverse function is \(f^{-1}(Y) = Y^c\).The inverse of this function is \(f^{-1}: \mathcal{P}(\mathbb{Z}) \rightarrow \mathcal{P}(\mathbb{Z})\) such that \(f^{-1}(Y) = Y^c\) for any subset \(Y\) in \(\mathcal{P}(\mathbb{Z})\)
+    \es
+    
+    \item [(2)] Let R and S be equivalence relations on a set X. Prove or disprove the following: \begin{enumerate}
+        \item [(a)] \(R \cap S\) is an equivalence relation on X
+        \item [(b)] \(R \cup S\) is an equivalence relation on X
+    \end{enumerate}
+    \bs
+    \\
+    %if you are going to solve this one, write your answer here. If not delete this box and the code above. If you choose this problem make sure you indidicate when you are solving part a, and when you are solving part b.
+    (a). For \(R \cap S\) to be a equivalence relation on \(X\), we need to check for three properties: reflexivity, symmetry, and transitivity.\\
+    \textbf{Reflexivity}: Since \(R\) and\(S\) are equivalence relations, they are both reflexive. Therefore, for every element \(x\) in \(X\),\((x,x)\) is in both \(R\) and \(S\), consequently in their intersection \(R \cap S\). Therefore, \(R \cap S\) is reflexive.\\
+    \textbf{Symmetry}: Let \(x,y \in X\) such that \(x,y \in R \cap S\). Since \((x,y)\) is in \(R \cap S\), it implies that \((x,y)\) is in both \(R\) and\(S\). Since we know that \(R\) and \(S\) are equivalence relations, they are both symmetric. Therefore, \(y,x\) is in both \(R\) and \(S\) as well, and consequently in their intersection \(R \cap S\). Therefore, \(R \cap S\) is symmetric.\\
+    \textbf{Transitive} Let \(x,y,z \in X\) such that \((x,y),(y,z) \in R \cap S\). Since \((x,y)\) and \((y,z)\) are in \(R \cap S\), it implies that they are both in \(R\) and \(S\). Since we already know that \(R\) and \(S\) are equivalence relations, they are both transitive. Therefore, \((x,z)\) is in both \(R\) and \(S\) as well, and consequently in their intersection \(R \cap S\). Therefore \(R \cap S\) is transitive.\\
+    So \(R \cap S\) is a equivalence relation on \(X\).
+    (b). Let \(X\) be the set \(X = \set{x,y,z}\). Let \(R\) be the set \(R = \set{(x,x),(y,y),(z,z),(y,z),(z,y)}\) and \(S\) be the set \(S = \set{(x,x),(y,y),(z,z),(x,y),(y,x)}\). The union of this would be \(R \cup S = \set{(x,x),(y,y),(z,z),(x,y),(y,x),(y,z),(y,z)}\). Here we can see that \(R \cup S\) has \((1,2)\) and \(2,3)\) but not \(1,3\). So this fails the transitive property making it not an equivalence relation on \(X\).
+    \es
+\end{enumerate}
+
+\br
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
